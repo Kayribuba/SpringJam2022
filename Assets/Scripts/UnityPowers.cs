@@ -46,7 +46,11 @@ public class UnityPowers : MonoBehaviour
             switch (hit.transform.gameObject.tag)
             {
                 case "UnityArrowX":
-                    targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    if (transform.position.z <= ArrowParent.transform.position.z)
+                        targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    else
+                        targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+
                     break;
 
                 case "UnityArrowY":
@@ -54,7 +58,10 @@ public class UnityPowers : MonoBehaviour
                     break;
 
                 case "UnityArrowZ":
-                    targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    if (transform.position.x <= ArrowParent.transform.position.x)
+                        targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    else
+                        targetPosition.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
                     break;
             }
 

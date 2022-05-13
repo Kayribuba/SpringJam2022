@@ -454,9 +454,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521056203}
+  - component: {fileID: 521056207}
   - component: {fileID: 521056206}
   - component: {fileID: 521056205}
   - component: {fileID: 521056204}
+  - component: {fileID: 521056208}
   m_Layer: 9
   m_Name: Z
   m_TagString: UnityArrowZ
@@ -540,6 +542,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521056202}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &521056207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521056202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2633d03f7584c104a88f67bb3e6589f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &521056208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521056202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.39, y: 1.05, z: 1.51}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,9 +764,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928743245}
+  - component: {fileID: 928743249}
   - component: {fileID: 928743248}
   - component: {fileID: 928743247}
   - component: {fileID: 928743246}
+  - component: {fileID: 928743250}
   m_Layer: 9
   m_Name: X
   m_TagString: UnityArrowX
@@ -823,6 +852,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928743244}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &928743249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928743244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2633d03f7584c104a88f67bb3e6589f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &928743250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928743244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.39, y: 1.05, z: 1.51}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,9 +1032,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291285899}
+  - component: {fileID: 1291285903}
   - component: {fileID: 1291285902}
   - component: {fileID: 1291285901}
   - component: {fileID: 1291285900}
+  - component: {fileID: 1291285904}
   m_Layer: 9
   m_Name: Y
   m_TagString: UnityArrowY
@@ -1064,6 +1120,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291285898}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1291285903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291285898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2633d03f7584c104a88f67bb3e6589f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1291285904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291285898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.39, y: 1.05, z: 1.51}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1543384713
 GameObject:
   m_ObjectHideFlags: 0

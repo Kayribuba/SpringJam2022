@@ -23,71 +23,86 @@ public class UnityPowers : MonoBehaviour
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit TempHit;
+        RaycastHit hit;
+        Vector3 targetPosition;
 
-        if (Physics.Raycast(ray, out TempHit, 100, unityArrowLayer))
+        if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("X")))
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
-            {
-                hit = TempHit;
-                holdingArrows = true;
-                ArrowParent = hit.transform.parent.gameObject;
-                Border = ArrowParent.transform.parent;
-            }
+            targetPosition = hit.transform.position;
+            if (transform.position.z <= hit.transform.position.z)
+                targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+            else
+                targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+
+            hit.transform.gameObject.GetComponent<Rigidbody>().MovePosition(targetPosition);
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetMouseButtonUp(0))
-        {
-            holdingArrows = false;
-        }
 
-        if (holdingArrows)
-        {
-            targetPosition = ArrowParent.transform.position;
+        //Ray ray = new Ray(transform.position, transform.forward);
+        //RaycastHit TempHit;
 
-            switch (hit.transform.gameObject.tag)
-            {
-                case "UnityArrowX":
-                    if (transform.position.z <= ArrowParent.transform.position.z)
-                        targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
-                    else
-                        targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+        //if (Physics.Raycast(ray, out TempHit, 100, unityArrowLayer))
+        //{
+        //    if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
+        //    {
+        //        hit = TempHit;
+        //        holdingArrows = true;
+        //        ArrowParent = hit.transform.parent.gameObject;
+        //        Border = ArrowParent.transform.parent;
+        //    }
+        //}
 
-                    break;
+        //if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetMouseButtonUp(0))
+        //{
+        //    holdingArrows = false;
+        //}
 
-                case "UnityArrowY":
-                    targetPosition.y += Input.GetAxis("Mouse Y") * PlatformSpeed / 250;
-                    break;
+        //if (holdingArrows)
+        //{
+        //    targetPosition = ArrowParent.transform.position;
 
-                case "UnityArrowZ":
-                    if (transform.position.x <= ArrowParent.transform.position.x)
-                        targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
-                    else
-                        targetPosition.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
-                    break;
-            }
+        //    switch (hit.transform.gameObject.tag)
+        //    {
+        //        case "UnityArrowX":
+        //            if (transform.position.z <= ArrowParent.transform.position.z)
+        //                targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+        //            else
+        //                targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
 
-            if (targetPosition.x > Border.position.x + Border.localScale.x / 2)
-                targetPosition.x = Border.position.x + Border.localScale.x / 2;
-            else if(targetPosition.x < Border.position.x - Border.localScale.x / 2)
-                targetPosition.x = Border.position.x - Border.localScale.x / 2;
+        //            break;
 
-            if (targetPosition.y > Border.position.y + Border.localScale.y / 2)
-                targetPosition.y = Border.position.y + Border.localScale.y / 2;
-            else if (targetPosition.y < Border.position.y - Border.localScale.y / 2)
-                targetPosition.y = Border.position.y - Border.localScale.y / 2;
+        //        case "UnityArrowY":
+        //            targetPosition.y += Input.GetAxis("Mouse Y") * PlatformSpeed / 250;
+        //            break;
 
-            if (targetPosition.z > Border.position.z + Border.localScale.z / 2)
-                targetPosition.z = Border.position.z + Border.localScale.z / 2;
-            else if (targetPosition.z < Border.position.z - Border.localScale.z / 2)
-                targetPosition.z = Border.position.z - Border.localScale.z / 2;
+        //        case "UnityArrowZ":
+        //            if (transform.position.x <= ArrowParent.transform.position.x)
+        //                targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+        //            else
+        //                targetPosition.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+        //            break;
+        //    }
+
+        //    if (targetPosition.x > Border.position.x + Border.localScale.x / 2)
+        //        targetPosition.x = Border.position.x + Border.localScale.x / 2;
+        //    else if(targetPosition.x < Border.position.x - Border.localScale.x / 2)
+        //        targetPosition.x = Border.position.x - Border.localScale.x / 2;
+
+        //    if (targetPosition.y > Border.position.y + Border.localScale.y / 2)
+        //        targetPosition.y = Border.position.y + Border.localScale.y / 2;
+        //    else if (targetPosition.y < Border.position.y - Border.localScale.y / 2)
+        //        targetPosition.y = Border.position.y - Border.localScale.y / 2;
+
+        //    if (targetPosition.z > Border.position.z + Border.localScale.z / 2)
+        //        targetPosition.z = Border.position.z + Border.localScale.z / 2;
+        //    else if (targetPosition.z < Border.position.z - Border.localScale.z / 2)
+        //        targetPosition.z = Border.position.z - Border.localScale.z / 2;
 
 
-            Mathf.Clamp(targetPosition.x, Border.position.x - Border.localScale.x / 2, Border.position.x + Border.localScale.x / 2);
-            Mathf.Clamp(targetPosition.y, Border.position.y - Border.localScale.y / 2, Border.position.y + Border.localScale.y / 2);
-            Mathf.Clamp(targetPosition.z, Border.position.z - Border.localScale.z / 2, Border.position.z + Border.localScale.z / 2);
+        //    Mathf.Clamp(targetPosition.x, Border.position.x - Border.localScale.x / 2, Border.position.x + Border.localScale.x / 2);
+        //    Mathf.Clamp(targetPosition.y, Border.position.y - Border.localScale.y / 2, Border.position.y + Border.localScale.y / 2);
+        //    Mathf.Clamp(targetPosition.z, Border.position.z - Border.localScale.z / 2, Border.position.z + Border.localScale.z / 2);
 
-            ArrowParent.transform.position = targetPosition;
-        }
+        //    ArrowParent.transform.position = targetPosition;
     }
 }

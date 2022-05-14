@@ -10,6 +10,8 @@ TagManager:
   - UnityArrowY
   - UnityArrowZ
   - UnityArrowBase
+  - Bullet
+  - Fatal
   layers:
   - Default
   - TransparentFX
@@ -23,13 +25,13 @@ TagManager:
   - UnityArrows
   - Edit
   - Platform
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Hand
+  - Barrel
+  - EnemyBullet
+  - EnemyHand
+  - EnemyBarrel
+  - Fatal
   - 
   - 
   - 

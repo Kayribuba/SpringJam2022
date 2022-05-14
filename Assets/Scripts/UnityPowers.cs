@@ -8,8 +8,6 @@ public class UnityPowers : MonoBehaviour
     public GameObject safe;
     [Range(1, 250)] public float PlatformSpeed = 50f;
 
-    public GameObject magCube;
-
     GameObject ArrowParent;
     Transform Border;
     Vector3 targetPosition;

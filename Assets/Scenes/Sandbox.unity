@@ -390,8 +390,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361304683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.8, z: 1}
+  m_LocalPosition: {x: 0, y: 0.0166, z: -0}
+  m_LocalScale: {x: 1.2, y: 1.1851072, z: 1}
   m_Children: []
   m_Father: {fileID: 2104544086}
   m_RootOrder: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 817559541}
   - component: {fileID: 817559540}
   - component: {fileID: 817559539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.532, z: 0}
+  m_LocalPosition: {x: 0, y: 0.986, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2104544086}
@@ -1053,7 +1053,6 @@ MonoBehaviour:
     m_Bits: 512
   safe: {fileID: 1888179907}
   PlatformSpeed: 50
-  magCube: {fileID: 6419067116341733621, guid: 9af8fb1be1eceef4380177c775482e1f, type: 3}
 --- !u!1 &1128678388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128678388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.84, z: 0}
+  m_LocalPosition: {x: 0, y: -1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2104544086}
@@ -1445,7 +1444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104544085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.15, z: 0}
+  m_LocalPosition: {x: 0, y: 1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 361304684}
@@ -1466,7 +1465,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.8
+  m_Height: 2.5
   m_Radius: 0.6
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1488,7 +1487,7 @@ MonoBehaviour:
   controller: {fileID: 2104544087}
   Speed: 12
   jumpHeight: 3
-  gravity: -9.81
+  gravity: -19.62
   groundCheck: {fileID: 1128678389}
   groundDistance: 0.4
   groundMask:

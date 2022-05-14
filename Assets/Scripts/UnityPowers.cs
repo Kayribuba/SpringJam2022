@@ -27,7 +27,7 @@ public class UnityPowers : MonoBehaviour
 
         if (Physics.Raycast(ray, out TempHit, 100, unityArrowLayer))
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
             {
                 hit = TempHit;
                 holdingArrows = true;
@@ -36,7 +36,7 @@ public class UnityPowers : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetMouseButtonUp(0))
         {
             holdingArrows = false;
         }

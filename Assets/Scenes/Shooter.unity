@@ -3865,7 +3865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e7bf114943b5c4182a477100668784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 2917644448115937071, guid: 2fb9268746298c64e9d64d3c2bcbb77c, type: 3}
+  BulletPrefab: {fileID: 3234615243680311403, guid: 1036fbd0051ce5341a7b4d24fabbf3c7, type: 3}
   BarrelR: {fileID: 1862187875}
   BarrelL: {fileID: 555585772}
 --- !u!114 &1987910406

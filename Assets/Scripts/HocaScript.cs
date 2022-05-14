@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HocaScript : MonoBehaviour
@@ -19,12 +20,14 @@ public class HocaScript : MonoBehaviour
     float currentTime;
     public float shootCoolDown = 0.5f;
     float shootAgainAt;
+    GMscripto gameManagerScriptye;
 
     void Start()
     {
         Healthbar.maxValue = MaxHealthValue;
         Healthbar.value = MaxHealthValue;
         currentHealthValue = MaxHealthValue;
+        gameManagerScriptye = FindObjectOfType<GMscripto>();
     }
     void Update()
     {
@@ -44,6 +47,7 @@ public class HocaScript : MonoBehaviour
     }
     void Die()
     {
+        gameManagerScriptye.LoadSceneSecondsAfter(SceneManager.GetActiveScene().buildIndex + 1, 3f);
         Destroy(gameObject);
     }
     void TrackPlayer()

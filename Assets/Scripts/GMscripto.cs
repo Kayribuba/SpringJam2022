@@ -20,13 +20,13 @@ public class GMscripto : MonoBehaviour
         {
             Debug.Log("aman aman nereye geldik");
             targetTime = time + Time.time;
+            sceneBuildIndex = buildIndex;
 
             timeIsSet = true;
         }
     }
     public void LoadScene(int buildIndex)
     {
-        Debug.Log("bölüm deiþlana");
         SceneManager.LoadScene(buildIndex);
     }
 }

@@ -8,7 +8,10 @@ public class UnityPowers : MonoBehaviour
     public GameObject safe;
     [Range(1, 250)] public float PlatformSpeed = 50f;
 
+    public GameObject magCube;
+
     GameObject ArrowParent;
+    Transform Border;
     Vector3 targetPosition;
     bool holdingArrows;
     Camera cam;
@@ -31,6 +34,7 @@ public class UnityPowers : MonoBehaviour
                 hit = TempHit;
                 holdingArrows = true;
                 ArrowParent = hit.transform.parent.gameObject;
+                Border = ArrowParent.transform.parent;
             }
         }
 
@@ -65,7 +69,27 @@ public class UnityPowers : MonoBehaviour
                     break;
             }
 
-                ArrowParent.transform.position = targetPosition;
+            if (targetPosition.x > Border.position.x + Border.localScale.x / 2)
+                targetPosition.x = Border.position.x + Border.localScale.x / 2;
+            else if(targetPosition.x < Border.position.x - Border.localScale.x / 2)
+                targetPosition.x = Border.position.x - Border.localScale.x / 2;
+
+            if (targetPosition.y > Border.position.y + Border.localScale.y / 2)
+                targetPosition.y = Border.position.y + Border.localScale.y / 2;
+            else if (targetPosition.y < Border.position.y - Border.localScale.y / 2)
+                targetPosition.y = Border.position.y - Border.localScale.y / 2;
+
+            if (targetPosition.z > Border.position.z + Border.localScale.z / 2)
+                targetPosition.z = Border.position.z + Border.localScale.z / 2;
+            else if (targetPosition.z < Border.position.z - Border.localScale.z / 2)
+                targetPosition.z = Border.position.z - Border.localScale.z / 2;
+
+
+            Mathf.Clamp(targetPosition.x, Border.position.x - Border.localScale.x / 2, Border.position.x + Border.localScale.x / 2);
+            Mathf.Clamp(targetPosition.y, Border.position.y - Border.localScale.y / 2, Border.position.y + Border.localScale.y / 2);
+            Mathf.Clamp(targetPosition.z, Border.position.z - Border.localScale.z / 2, Border.position.z + Border.localScale.z / 2);
+
+            ArrowParent.transform.position = targetPosition;
         }
     }
 }

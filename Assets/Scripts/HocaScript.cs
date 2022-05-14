@@ -49,6 +49,7 @@ public class HocaScript : MonoBehaviour
     void TrackPlayer()
     {
         transform.LookAt(Player.position, Vector3.up);
+        transform.Rotate(new Vector3(-90 , 0 , 0));
 
         attackDirection = Player.position - Barrel.transform.position;
     }

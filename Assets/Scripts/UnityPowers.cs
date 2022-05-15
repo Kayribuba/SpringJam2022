@@ -14,11 +14,13 @@ public class UnityPowers : MonoBehaviour
     bool holdingArrows;
     Camera cam;
     RaycastHit hit;
+    AudioSource aSource;
 
     void Start()
     {
         cam = GetComponent<Camera>();
         ArrowParent = safe;
+        aSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -29,6 +31,7 @@ public class UnityPowers : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
             {
+                aSource.PlayOneShot(aSource.clip);
                 hit = TempHit;
                 holdingArrows = true;
                 ArrowParent = hit.transform.parent.gameObject;

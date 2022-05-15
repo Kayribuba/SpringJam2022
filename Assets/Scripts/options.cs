@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class options : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public Slider valuebar;
+    float valuee;
 
-    public void ChangeVolume(float volume)
+    public void SetVolume()
     {
-        audioMixer.SetFloat("volume", volume);
+        valuee = valuebar.value;
+        audioMixer.SetFloat("volume", valuee);
     }
 }

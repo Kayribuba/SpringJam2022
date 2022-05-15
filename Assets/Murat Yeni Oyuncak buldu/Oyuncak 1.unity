@@ -17581,7 +17581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6640467d41f4a24180dc0350b16c0c1, type: 2}
+  - {fileID: 2100000, guid: ed77cb5d38b25684ca462c991e3390d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23646,7 +23646,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   safe: {fileID: 349244431}
-  PlatformSpeed: 50
+  PlatformSpeed: 100
 --- !u!114 &1934438479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24550,7 +24550,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6640467d41f4a24180dc0350b16c0c1, type: 2}
+  - {fileID: 2100000, guid: ed77cb5d38b25684ca462c991e3390d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

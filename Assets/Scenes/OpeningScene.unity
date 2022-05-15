@@ -1152,6 +1152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 911398380}
+  - component: {fileID: 911398381}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -1177,6 +1178,20 @@ Transform:
   m_Father: {fileID: 1942284727}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911398381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911398379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98313c7bf2399c54eb05381f349ca043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: fc5bdaa5b50c4f24cb0749c329cce356, type: 2}
+  valuebar: {fileID: 1612795791}
 --- !u!1 &1137886553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,7 +1791,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1612795790}
   - component: {fileID: 1612795791}
-  - component: {fileID: 1612795792}
   m_Layer: 0
   m_Name: Volume
   m_TagString: Untagged
@@ -1854,14 +1868,14 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1612795792}
+      - m_Target: {fileID: 911398381}
         m_TargetAssemblyTypeName: options, Assembly-CSharp
-        m_MethodName: ChangeVolume
-        m_Mode: 0
+        m_MethodName: SetVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1870,19 +1884,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1612795792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612795789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98313c7bf2399c54eb05381f349ca043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: fc5bdaa5b50c4f24cb0749c329cce356, type: 2}
 --- !u!1 &1617457689
 GameObject:
   m_ObjectHideFlags: 0

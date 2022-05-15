@@ -3432,6 +3432,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.0000042007
       objectReference: {fileID: 0}
+    - target: {fileID: 65702495048144492, guid: d6041cadf5b6cd74f919902c631bb545, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d6041cadf5b6cd74f919902c631bb545, type: 3}
       propertyPath: m_Name
       value: bookshelf
@@ -4099,7 +4103,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

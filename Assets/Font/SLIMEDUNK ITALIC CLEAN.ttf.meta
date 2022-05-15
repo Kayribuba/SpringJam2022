@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 59283e9dd62ee2d4b94b1c4ccca7151f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - SLIMEDUNK ITALIC CLEAN
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d5bbce84f12a4834895887637bc8477a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 56324f232cd291440a802e5a24917fc5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - SLIMEDUNK ROUGH
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 02cc854f733d5144699ab9f9e8010f56, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

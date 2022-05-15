@@ -2239,6 +2239,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91882d7418d0af642881b0c61bc022f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: e29f809980eecfa4682ba43f17347b2d, type: 3}
+  - {fileID: 8300000, guid: 11159d054dac93f4b9f3fb04b9b42a25, type: 3}
+  - {fileID: 8300000, guid: 197307077f24b6d498f9eca2cf5ba551, type: 3}
+  - {fileID: 8300000, guid: 378f17c49f5c86445b04410cfa33750c, type: 3}
+  - {fileID: 8300000, guid: a03e9410af71f7e4db1ade515631f7b6, type: 3}
+  - {fileID: 8300000, guid: 5c0f30c63bcf3934fa54990693933070, type: 3}
+  source: {fileID: 1707496757}
 --- !u!1 &1723382168
 GameObject:
   m_ObjectHideFlags: 0

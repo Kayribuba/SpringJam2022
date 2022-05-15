@@ -32,7 +32,7 @@ public class AssignmentTextGoBrr : MonoBehaviour
         {
             changed2 = true;
             text.text = "GO";
-            targetTime = Time.time + .1f;
+            targetTime = Time.time + .3f;
         }
         if(Time.time >= targetTime)
         {

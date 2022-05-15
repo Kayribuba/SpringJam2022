@@ -20,7 +20,7 @@ public class AssignmentTextGoBrr : MonoBehaviour
 
     void Update()
     {
-        if (text.fontSize <= 200)
+        if (text.fontSize <= 125)
             text.fontSize += growSpeed;
         else if(!changed)
         {

@@ -11,6 +11,7 @@ public class PlayerHealthScript : MonoBehaviour
     public float MaxHealthValue = 100f;
     public float TouchDamage = 10f;
     public TextMeshProUGUI Healthbartextmesh;
+    public TextMeshProUGUI Gradetextmesh;
 
 
     float currentHealthValue;
@@ -22,6 +23,7 @@ public class PlayerHealthScript : MonoBehaviour
         playerHealthBar.value = MaxHealthValue;
         currentHealthValue = MaxHealthValue;
         Healthbartextmesh.text = "Health : " + currentHealthValue;
+        Gradetextmesh.text = "GRADE A";
         gameMangerScriptye = FindObjectOfType<GMscripto>();
     }
     void Update()
@@ -34,13 +36,48 @@ public class PlayerHealthScript : MonoBehaviour
         playerHealthBar.value = currentHealthValue;
 
         if(currentHealthValue > 0)
-        Healthbartextmesh.text = "Health : " + currentHealthValue;
+        {
+            Healthbartextmesh.text = "Health : " + currentHealthValue;
+            Gradetextmesh.text = "GRADE " + GetGrade(currentHealthValue);
+        }
 
         if (currentHealthValue <= 0)
         {
             Healthbartextmesh.text = "Health : 0";
+            Gradetextmesh.text = "GRADE " + GetGrade(currentHealthValue);
             Die();
         }
+    }
+    string GetGrade(float points)
+    {
+        string grade = "A";
+
+        if(points == 50)
+        {
+            grade = "A";
+        }
+        if(points >= 40)
+        {
+            grade = "B";
+        }
+        else if (points >= 30)
+        {
+            grade = "C";
+        }
+        else if (points >= 20)
+        {
+            grade = "D";
+        }
+        else if (points >= 10)
+        {
+            grade = "E";
+        }
+        else
+        {
+            grade = "F";
+        }
+
+        return grade;
     }
     void Die()
     {

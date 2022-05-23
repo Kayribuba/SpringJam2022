@@ -103,7 +103,7 @@ public class UnityPowers : MonoBehaviour
             Collider[] collidedObjects2 = new Collider[0];
 
             boxCollider = ArrowParent.GetComponent<BoxCollider>();
-            Vector3 halfExtents = new Vector3(boxCollider.size.x / 2, boxCollider.size.y / 2, boxCollider.size.z / 2);
+            Vector3 halfExtents = new Vector3(boxCollider.size.x * ArrowParent.transform.localScale.x * ArrowParent.transform.parent.transform.localScale.x / 2, boxCollider.size.y * ArrowParent.transform.localScale.y * ArrowParent.transform.parent.transform.localScale.y / 2, boxCollider.size.z * ArrowParent.transform.localScale.z * ArrowParent.transform.parent.transform.localScale.z / 2);
             Physics.OverlapBoxNonAlloc(targetPosition, halfExtents, collidedObjects);
 
             for(int i = 0; i < collidedObjects.Length; i++)
@@ -123,7 +123,6 @@ public class UnityPowers : MonoBehaviour
             bool collided = false;
             foreach(Collider collisionsxd in collidedObjects2)
             {
-                Debug.Log(collisionsxd);
                 if (collisionsxd == boxCollider || collisionsxd == null)
                 { }
                 else if (collisionsxd.tag == "UnityArrowBase")
@@ -132,8 +131,6 @@ public class UnityPowers : MonoBehaviour
                     break;
                 }
             }
-
-            Debug.Log(collided);
 
             if (!collided)
             {

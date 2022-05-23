@@ -12,7 +12,6 @@ public class baseCollisionScript : MonoBehaviour
     {
         infoOfEveryBaseActiveInScene = FindObjectsOfType<BaseInfo>();
     }
-
     public bool IsPointInAnyBase(Vector3 point)
     {
         if (testScript != null)

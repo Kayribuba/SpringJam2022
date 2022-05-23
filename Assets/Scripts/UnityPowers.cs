@@ -8,6 +8,9 @@ public class UnityPowers : MonoBehaviour
     public GameObject safe;
     [Range(1, 250)] public float PlatformSpeed = 50f;
 
+    //baseCollisionScript Collisions;
+    //bool CollisionsAreOn;
+    BoxCollider boxCollider;
     GameObject ArrowParent;
     Transform Border;
     Vector3 targetPosition;
@@ -18,6 +21,8 @@ public class UnityPowers : MonoBehaviour
 
     void Start()
     {
+        //Collisions = FindObjectOfType<baseCollisionScript>();
+        //CollisionsAreOn = Collisions != null;
         cam = GetComponent<Camera>();
         ArrowParent = safe;
         aSource = GetComponent<AudioSource>();
@@ -51,22 +56,26 @@ public class UnityPowers : MonoBehaviour
             switch (hit.transform.gameObject.tag)
             {
                 case "UnityArrowX":
-                    if (transform.position.z <= ArrowParent.transform.position.z)
-                        targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
-                    else
-                        targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
 
+                    if (transform.position.z <= ArrowParent.transform.position.z)//platformun z olarak arkasýndaysam
+                    {
+                        targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    }
+                    else//platformun z olarak önündeysem
+                    {
+                        targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    }
                     break;
 
                 case "UnityArrowY":
-                    targetPosition.y += Input.GetAxis("Mouse Y") * PlatformSpeed / 250;
+                    targetPosition.y += Input.GetAxis("Mouse Y") * PlatformSpeed / 250;//yukarý aþaðý
                     break;
 
                 case "UnityArrowZ":
-                    if (transform.position.x <= ArrowParent.transform.position.x)
-                        targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
-                    else
-                        targetPosition.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    if (transform.position.x <= ArrowParent.transform.position.x)//platformun x olarak solundaysam
+                        targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250; //saða çekersem geri
+                    else//platformun x olarak saðýndaysam
+                        targetPosition.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250; //saða çekersem ileri
                     break;
             }
 
@@ -90,7 +99,46 @@ public class UnityPowers : MonoBehaviour
             Mathf.Clamp(targetPosition.y, Border.position.y - Border.localScale.y / 2, Border.position.y + Border.localScale.y / 2);
             Mathf.Clamp(targetPosition.z, Border.position.z - Border.localScale.z / 2, Border.position.z + Border.localScale.z / 2);
 
-            ArrowParent.transform.position = targetPosition;
+            Collider[] collidedObjects = new Collider[1000];
+            Collider[] collidedObjects2 = new Collider[0];
+
+            boxCollider = ArrowParent.GetComponent<BoxCollider>();
+            Vector3 halfExtents = new Vector3(boxCollider.size.x / 2, boxCollider.size.y / 2, boxCollider.size.z / 2);
+            Physics.OverlapBoxNonAlloc(targetPosition, halfExtents, collidedObjects);
+
+            for(int i = 0; i < collidedObjects.Length; i++)
+            {
+                if(collidedObjects[i] == null)
+                {
+                    collidedObjects2 = new Collider[i];
+
+                    for(int j = 0; j < i; j++)
+                    {
+                        collidedObjects2[j] = collidedObjects[j];
+                    }
+                    break;
+                }
+            }
+
+            bool collided = false;
+            foreach(Collider collisionsxd in collidedObjects2)
+            {
+                Debug.Log(collisionsxd);
+                if (collisionsxd == boxCollider || collisionsxd == null)
+                { }
+                else if (collisionsxd.tag == "UnityArrowBase")
+                {
+                    collided = true;
+                    break;
+                }
+            }
+
+            Debug.Log(collided);
+
+            if (!collided)
+            {
+                ArrowParent.transform.position = targetPosition;
+            }
         }
     }
 }

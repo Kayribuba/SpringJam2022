@@ -10,5 +10,9 @@ public class Constants
     public static string UnityArrowXTag = "UnityArrowX";
     public static string UnityArrowYTag = "UnityArrowY";
     public static string UnityArrowZTag = "UnityArrowZ";
+    public static string UnityScaleArrowXTag = "UnityScaleArrowX";
+    public static string UnityScaleArrowYTag = "UnityScaleArrowY";
+    public static string UnityScaleArrowZTag = "UnityScaleArrowZ";
+    public static string UnityScaleBaseTag = "UnityScaleBase";
     public static string UnityArrowBaseTag = "UnityArrowBase";
 }

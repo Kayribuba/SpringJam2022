@@ -16,6 +16,9 @@ TagManager:
   - UnityScaleArrowY
   - UnityScaleArrowZ
   - UnityScaleBase
+  - UnityScaleArrowXMinus
+  - UnityScaleArrowYMinus
+  - UnityScaleArrowZMinus
   layers:
   - Default
   - TransparentFX

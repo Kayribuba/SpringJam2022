@@ -17,6 +17,12 @@ public class UnityPowers : MonoBehaviour
     public string[] TRANSFORMObjectTagsToCollide;
     public string[] SCALEObjectTagsToCollide;
 
+    public Material glowMaterial;
+    public Material greenMaterial;
+    public Material blueMaterial;
+    public Material redMaterial;
+    Material oldMaterial;
+
     //baseCollisionScript Collisions;
     //bool CollisionsAreOn;
     BoxCollider boxCollider;
@@ -42,8 +48,11 @@ public class UnityPowers : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit TempHit;
 
+
         if (Physics.Raycast(ray, out TempHit, 100, unityArrowLayer))
         {
+            oldMaterial = TempHit.collider.GetComponent<MeshRenderer>().sharedMaterial;
+
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
             {
                 aSource.PlayOneShot(aSource.clip);
@@ -54,6 +63,8 @@ public class UnityPowers : MonoBehaviour
             }
         }
 
+        Debug.Log(TempHit.collider + " , " + oldMaterial);
+
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetMouseButtonUp(0))
         {
             holdingArrows = false;
@@ -61,7 +72,12 @@ public class UnityPowers : MonoBehaviour
 
         if (holdingArrows)
         {
-            switch(hit.transform.parent.tag)
+            if (hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial != glowMaterial)
+            {
+                hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = glowMaterial;
+            }
+
+            switch (hit.transform.parent.tag)
             {
                 case "UnityArrowBase":
                     TransformMethod(hit.transform.gameObject.tag);
@@ -70,6 +86,23 @@ public class UnityPowers : MonoBehaviour
                 case "UnityScaleBase":
                     ScaleMethod(hit.transform.gameObject.tag);
                     break;
+            }
+        }
+        else if(hit.collider == null)
+        { }
+        else if (hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial == glowMaterial)
+        {
+            if (hit.collider.tag == "UnityArrowX" || hit.collider.tag == "UnityScaleArrowX" || hit.collider.tag == "UnityScaleArrowXMinus")
+            {
+                hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = redMaterial;
+            }
+            else if (hit.collider.tag == "UnityArrowY" || hit.collider.tag == "UnityScaleArrowY" || hit.collider.tag == "UnityScaleArrowYMinus")
+            {
+                hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = greenMaterial;
+            }
+            else if (hit.collider.tag == "UnityArrowZ" || hit.collider.tag == "UnityScaleArrowZ" || hit.collider.tag == "UnityScaleArrowZMinus")
+            {
+                hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = blueMaterial;
             }
         }
     }

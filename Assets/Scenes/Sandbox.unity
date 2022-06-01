@@ -697,6 +697,7 @@ MonoBehaviour:
     m_Bits: 512
   safe: {fileID: 704246384}
   PlatformSpeed: 100
+  ScaleSpeed: 300
   SmallestScale: {x: 0.3, y: 0.3, z: 0.3}
   BiggestScale: {x: 5, y: 5, z: 5}
   TRANSFORMObjectTagsToCollide:

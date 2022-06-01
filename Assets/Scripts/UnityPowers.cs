@@ -6,7 +6,8 @@ public class UnityPowers : MonoBehaviour
 {
     public LayerMask unityArrowLayer;
     public GameObject safe;
-    [Range(1, 250)] public float PlatformSpeed = 50f;
+    [Range(1, 250)] public float PlatformSpeed = 100f;
+    [Range(1, 500)] public float ScaleSpeed = 300f;
 
     [Header("!!! Smallest scale shouldn't be less than 0.3f for cosmetic reasons !!!")]
     public Vector3 SmallestScale = new Vector3(0.3f, 0.3f, 0.3f);
@@ -81,38 +82,38 @@ public class UnityPowers : MonoBehaviour
         {
             case "UnityScaleArrowX":
                 if (transform.position.z <= ArrowParent.transform.position.z)
-                    targetScale.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.x += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 else
-                    targetScale.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.x -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 break;
 
             case "UnityScaleArrowY":
-                targetScale.y += Input.GetAxis("Mouse Y") * PlatformSpeed / 250;
+                targetScale.y += Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
                 break;
 
             case "UnityScaleArrowZ":
                 if (transform.position.x <= ArrowParent.transform.position.x)
-                    targetScale.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.z -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 else
-                    targetScale.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.z += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 break;
 
             case "UnityScaleArrowXMinus":
                 if (transform.position.z <= ArrowParent.transform.position.z)
-                    targetScale.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.x -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 else
-                    targetScale.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.x += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 break;
 
             case "UnityScaleArrowYMinus":
-                targetScale.y -= Input.GetAxis("Mouse Y") * PlatformSpeed / 250;
+                targetScale.y -= Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
                 break;
 
             case "UnityScaleArrowZMinus":
                 if (transform.position.x <= ArrowParent.transform.position.x)
-                    targetScale.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.z += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 else
-                    targetScale.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetScale.z -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
                 break;
         }
 

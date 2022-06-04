@@ -9,7 +9,12 @@ public class UnityPowers : MonoBehaviour
     [Range(1, 250)] public float PlatformSpeed = 100f;
     [Range(1, 500)] public float ScaleSpeed = 300f;
 
-    [Header("!!! Smallest scale shouldn't be less than 0.3f for cosmetic reasons !!!")]
+    [Header("1e-10 means no snapping")]
+    [Range(1e-10f, 10)]public float GridStep = 0.5f;
+    float deltaMouseProcessX;
+    float deltaMouseProcessY;
+
+    [Header("!!! Smallest scale shouldn't be less than 0.3f !!!")]
     public Vector3 SmallestScale = new Vector3(0.3f, 0.3f, 0.3f);
     public Vector3 BiggestScale = new Vector3(5f, 5f, 5f);
 
@@ -21,7 +26,6 @@ public class UnityPowers : MonoBehaviour
     public Material greenMaterial;
     public Material blueMaterial;
     public Material redMaterial;
-    Material oldMaterial;
 
     //baseCollisionScript Collisions;
     //bool CollisionsAreOn;
@@ -51,8 +55,6 @@ public class UnityPowers : MonoBehaviour
 
         if (Physics.Raycast(ray, out TempHit, 100, unityArrowLayer))
         {
-            oldMaterial = TempHit.collider.GetComponent<MeshRenderer>().sharedMaterial;
-
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
             {
                 aSource.PlayOneShot(aSource.clip);
@@ -60,10 +62,10 @@ public class UnityPowers : MonoBehaviour
                 holdingArrows = true;
                 ArrowParent = hit.transform.parent.gameObject;
                 Border = ArrowParent.transform.parent;
+                deltaMouseProcessX = 0;
+                deltaMouseProcessY = 0;
             }
         }
-
-        Debug.Log(TempHit.collider + " , " + oldMaterial);
 
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetMouseButtonUp(0))
         {
@@ -111,42 +113,70 @@ public class UnityPowers : MonoBehaviour
     {
         targetScale = ArrowParent.transform.localScale;
 
+        float deltaMouseX = Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+        float deltaMouseY = Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
+
+        deltaMouseX -= deltaMouseX % GridStep;
+        deltaMouseY -= deltaMouseY % GridStep;
+
+        if(deltaMouseX == 0)
+        {
+            deltaMouseProcessX += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+        }
+        if(Mathf.Abs(deltaMouseProcessX) >= GridStep)
+        {
+            deltaMouseX = deltaMouseProcessX - (deltaMouseProcessX % GridStep);
+            deltaMouseProcessX = 0;
+        }
+
+        if (deltaMouseY == 0)
+        {
+            deltaMouseProcessY += Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
+        }
+        if (Mathf.Abs(deltaMouseProcessY) >= GridStep)
+        {
+            deltaMouseY = deltaMouseProcessY - (deltaMouseProcessY % GridStep);
+            deltaMouseProcessY = 0;
+        }
+
+        Debug.Log(deltaMouseX + " " + deltaMouseProcessX + "   /   " + deltaMouseY + " " + deltaMouseProcessY);
+
         switch (tagg)
         {
             case "UnityScaleArrowX":
                 if (transform.position.z <= ArrowParent.transform.position.z)
-                    targetScale.x += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.x += deltaMouseX;
                 else
-                    targetScale.x -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.x -= deltaMouseX;
                 break;
 
             case "UnityScaleArrowY":
-                targetScale.y += Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
+                targetScale.y += deltaMouseY;
                 break;
 
             case "UnityScaleArrowZ":
                 if (transform.position.x <= ArrowParent.transform.position.x)
-                    targetScale.z -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.z -= deltaMouseX;
                 else
-                    targetScale.z += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.z += deltaMouseX;
                 break;
 
             case "UnityScaleArrowXMinus":
                 if (transform.position.z <= ArrowParent.transform.position.z)
-                    targetScale.x -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.x -= deltaMouseX;
                 else
-                    targetScale.x += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.x += deltaMouseX;
                 break;
 
             case "UnityScaleArrowYMinus":
-                targetScale.y -= Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
+                targetScale.y -= deltaMouseY;
                 break;
 
             case "UnityScaleArrowZMinus":
                 if (transform.position.x <= ArrowParent.transform.position.x)
-                    targetScale.z += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.z += deltaMouseX;
                 else
-                    targetScale.z -= Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+                    targetScale.z -= deltaMouseX;
                 break;
         }
 

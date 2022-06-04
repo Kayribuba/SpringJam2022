@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6310668387336422679}
   - component: {fileID: 6310668387336422676}
   - component: {fileID: 6310668387336422677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ScaleBase
   m_TagString: UnityScaleBase
   m_Icon: {fileID: 0}

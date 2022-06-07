@@ -79,15 +79,13 @@ public class UnityPowers : MonoBehaviour
                 hit.collider.gameObject.GetComponent<MeshRenderer>().sharedMaterial = glowMaterial;
             }
 
-            switch (hit.transform.parent.tag)
+            if (hit.collider.tag == "UnityScaleArrowZ" || hit.collider.tag == "UnityScaleArrowZMinus" || hit.collider.tag == "UnityScaleArrowX" || hit.collider.tag == "UnityScaleArrowXMinus" || hit.collider.tag == "UnityScaleArrowY" || hit.collider.tag == "UnityScaleArrowYMinus")
             {
-                case "UnityArrowBase":
-                    TransformMethod(hit.transform.gameObject.tag);
-                    break;
-
-                case "UnityScaleBase":
-                    ScaleMethod(hit.transform.gameObject.tag);
-                    break;
+                ScaleMethod(hit.collider.tag);
+            }
+            else if (hit.collider.tag == "UnityArrowZ" || hit.collider.tag == "UnityArrowX" || hit.collider.tag == "UnityArrowY")
+            {
+                TransformMethod(hit.collider.tag);
             }
         }
         else if(hit.collider == null)
@@ -111,7 +109,7 @@ public class UnityPowers : MonoBehaviour
 
     private void ScaleMethod(string tagg)
     {
-        targetScale = ArrowParent.transform.localScale;
+        targetScale = ArrowParent.transform.lossyScale;
 
         float deltaMouseX = Input.GetAxis("Mouse X") * ScaleSpeed / 250;
         float deltaMouseY = Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
@@ -138,8 +136,6 @@ public class UnityPowers : MonoBehaviour
             deltaMouseY = deltaMouseProcessY - (deltaMouseProcessY % GridStep);
             deltaMouseProcessY = 0;
         }
-
-        Debug.Log(deltaMouseX + " " + deltaMouseProcessX + "   /   " + deltaMouseY + " " + deltaMouseProcessY);
 
         switch (tagg)
         {
@@ -202,33 +198,87 @@ public class UnityPowers : MonoBehaviour
 
         if (!collided && targetScale.x > SmallestScale.x && targetScale.y > SmallestScale.y && targetScale.z > SmallestScale.z && targetScale.x < BiggestScale.x && targetScale.y < BiggestScale.y && targetScale.z < BiggestScale.z)
         {
-            ArrowParent.transform.localScale = targetScale;
+            Debug.Log("in scale");
 
-            ArrowParent.transform.Find("X+").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.z, 1 / ArrowParent.transform.localScale.x, 0.3f / ArrowParent.transform.localScale.y);
-            ArrowParent.transform.Find("X-").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.z, 1 / ArrowParent.transform.localScale.x, 0.3f / ArrowParent.transform.localScale.y);
-            ArrowParent.transform.Find("Y+").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x, 1 / ArrowParent.transform.localScale.y, 0.3f / ArrowParent.transform.localScale.z);
-            ArrowParent.transform.Find("Y-").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x, 1 / ArrowParent.transform.localScale.y, 0.3f / ArrowParent.transform.localScale.z);
-            ArrowParent.transform.Find("Z+").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x, 1 / ArrowParent.transform.localScale.z, 0.3f / ArrowParent.transform.localScale.y);
-            ArrowParent.transform.Find("Z-").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x, 1 / ArrowParent.transform.localScale.z, 0.3f / ArrowParent.transform.localScale.y);
+            Vector3 arrowArranger = new Vector3(1, 1, 1);
+
+            if(ArrowParent.transform.parent != null)
+            {
+                Vector3 middleman = new Vector3();
+
+                middleman.x = targetScale.x / ArrowParent.transform.parent.lossyScale.x;
+                middleman.y = targetScale.y / ArrowParent.transform.parent.lossyScale.y;
+                middleman.z = targetScale.z / ArrowParent.transform.parent.lossyScale.z;
+
+                arrowArranger.x = ArrowParent.transform.parent.lossyScale.x;
+                arrowArranger.y = ArrowParent.transform.parent.lossyScale.y;
+                arrowArranger.z = ArrowParent.transform.parent.lossyScale.z;
+
+                ArrowParent.transform.localScale = middleman;
+            }
+            else
+            {
+                ArrowParent.transform.localScale = targetScale;
+            }
 
             Vector3 ArrowPosScale = ArrowParent.transform.position;
 
-            ArrowPosScale.x += ArrowParent.transform.localScale.x / 2 + ArrowParent.transform.Find("X+").transform.localScale.y * ArrowParent.transform.localScale.x / 2;
-            ArrowParent.transform.Find("X+").transform.position = ArrowPosScale;
-            ArrowPosScale.x -= ArrowParent.transform.localScale.x + ArrowParent.transform.Find("X-").transform.localScale.y * ArrowParent.transform.localScale.x;
-            ArrowParent.transform.Find("X-").transform.position = ArrowPosScale;
-            ArrowPosScale = ArrowParent.transform.position;
+            if (ArrowParent.transform.Find("X+") != null)
+            {
+                ArrowParent.transform.Find("X+").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.z / arrowArranger.z, 1 / ArrowParent.transform.localScale.x / arrowArranger.x, 0.3f / ArrowParent.transform.localScale.y / arrowArranger.y);
 
-            ArrowPosScale.y += ArrowParent.transform.localScale.y / 2 + ArrowParent.transform.Find("Y+").transform.localScale.y * ArrowParent.transform.localScale.y / 2;
-            ArrowParent.transform.Find("Y+").transform.position = ArrowPosScale;
-            ArrowPosScale.y -= ArrowParent.transform.localScale.y + ArrowParent.transform.Find("Y-").transform.localScale.y * ArrowParent.transform.localScale.y;
-            ArrowParent.transform.Find("Y-").transform.position = ArrowPosScale;
-            ArrowPosScale = ArrowParent.transform.position;
+                ArrowPosScale.x += ArrowParent.transform.localScale.x / 2 * arrowArranger.x + ArrowParent.transform.Find("X+").transform.localScale.y * ArrowParent.transform.localScale.x / 2 * arrowArranger.y;
+                ArrowParent.transform.Find("X+").transform.position = ArrowPosScale;
 
-            ArrowPosScale.z += ArrowParent.transform.localScale.z / 2 + ArrowParent.transform.Find("Z+").transform.localScale.y * ArrowParent.transform.localScale.z / 2;
-            ArrowParent.transform.Find("Z+").transform.position = ArrowPosScale;
-            ArrowPosScale.z -= ArrowParent.transform.localScale.z + ArrowParent.transform.Find("Z-").transform.localScale.y * ArrowParent.transform.localScale.z;
-            ArrowParent.transform.Find("Z-").transform.position = ArrowPosScale;
+                ArrowPosScale = ArrowParent.transform.position;
+            }
+            if (ArrowParent.transform.Find("X-") != null)
+            {
+                ArrowParent.transform.Find("X-").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.z / arrowArranger.z, 1 / ArrowParent.transform.localScale.x / arrowArranger.x, 0.3f / ArrowParent.transform.localScale.y / arrowArranger.y);
+
+                ArrowPosScale.x -= ArrowParent.transform.localScale.x / 2 * arrowArranger.x + ArrowParent.transform.Find("X-").transform.localScale.y * ArrowParent.transform.localScale.x / 2 * arrowArranger.y;
+                ArrowParent.transform.Find("X-").transform.position = ArrowPosScale;
+
+                ArrowPosScale = ArrowParent.transform.position;
+            }
+
+            if (ArrowParent.transform.Find("Y+") != null)
+            {
+                ArrowParent.transform.Find("Y+").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x / arrowArranger.x, 1 / ArrowParent.transform.localScale.y / arrowArranger.y, 0.3f / ArrowParent.transform.localScale.z / arrowArranger.z);
+
+                ArrowPosScale.y += ArrowParent.transform.localScale.y / 2 * arrowArranger.y + ArrowParent.transform.Find("Y+").transform.localScale.y * ArrowParent.transform.localScale.y / 2 * arrowArranger.y;
+                ArrowParent.transform.Find("Y+").transform.position = ArrowPosScale;
+
+                ArrowPosScale = ArrowParent.transform.position;
+            }
+            if (ArrowParent.transform.Find("Y-") != null)
+            {
+                ArrowParent.transform.Find("Y-").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x / arrowArranger.x, 1 / ArrowParent.transform.localScale.y / arrowArranger.y, 0.3f / ArrowParent.transform.localScale.z / arrowArranger.z);
+
+                ArrowPosScale.y -= ArrowParent.transform.localScale.y / 2 * arrowArranger.y + ArrowParent.transform.Find("Y-").transform.localScale.y * ArrowParent.transform.localScale.y / 2 * arrowArranger.y;
+                ArrowParent.transform.Find("Y-").transform.position = ArrowPosScale;
+
+                ArrowPosScale = ArrowParent.transform.position;
+            }
+
+            if (ArrowParent.transform.Find("Z+") != null)
+            {
+                ArrowParent.transform.Find("Z+").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x / arrowArranger.x, 1 / ArrowParent.transform.localScale.z / arrowArranger.z, 0.3f / ArrowParent.transform.localScale.y / arrowArranger.y);
+
+                ArrowPosScale.z += ArrowParent.transform.localScale.z / 2 * arrowArranger.z + ArrowParent.transform.Find("Z+").transform.localScale.y * ArrowParent.transform.localScale.z / 2 * arrowArranger.z;
+                ArrowParent.transform.Find("Z+").transform.position = ArrowPosScale;
+
+                ArrowPosScale = ArrowParent.transform.position;
+            }
+            if (ArrowParent.transform.Find("Z-") != null)
+            {
+                ArrowParent.transform.Find("Z-").transform.localScale = new Vector3(0.3f / ArrowParent.transform.localScale.x / arrowArranger.x, 1 / ArrowParent.transform.localScale.z / arrowArranger.z, 0.3f / ArrowParent.transform.localScale.y / arrowArranger.y);
+
+                ArrowPosScale.z -= ArrowParent.transform.localScale.z / 2 * arrowArranger.z + ArrowParent.transform.Find("Z-").transform.localScale.y * ArrowParent.transform.localScale.z / 2 * arrowArranger.z;
+                ArrowParent.transform.Find("Z-").transform.position = ArrowPosScale;
+
+                ArrowPosScale = ArrowParent.transform.position;
+            }
         }
 
         if (SmallestScale.x >= transform.localScale.x)
@@ -320,6 +370,13 @@ public class UnityPowers : MonoBehaviour
         if (!collided)
         {
             ArrowParent.transform.position = targetPosition;
+
+
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(gameObject.transform.position, targetScale);
     }
 }

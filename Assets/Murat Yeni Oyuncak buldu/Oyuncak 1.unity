@@ -23647,10 +23647,16 @@ MonoBehaviour:
     m_Bits: 512
   safe: {fileID: 349244431}
   PlatformSpeed: 100
+  ScaleSpeed: 300
+  GridStep: 0.5
   SmallestScale: {x: 0.3, y: 0.3, z: 0.3}
   BiggestScale: {x: 5, y: 5, z: 5}
   TRANSFORMObjectTagsToCollide: []
   SCALEObjectTagsToCollide: []
+  glowMaterial: {fileID: 0}
+  greenMaterial: {fileID: 0}
+  blueMaterial: {fileID: 0}
+  redMaterial: {fileID: 0}
 --- !u!114 &1934438479
 MonoBehaviour:
   m_ObjectHideFlags: 0

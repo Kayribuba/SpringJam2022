@@ -6,17 +6,25 @@ public class UnityPowers : MonoBehaviour
 {
     public LayerMask unityArrowLayer;
     public GameObject safe;
-    [Range(1, 250)] public float PlatformSpeed = 100f;
-    [Range(1, 500)] public float ScaleSpeed = 300f;
+    [Range(1, 250)] public float DefaultPlatformSpeed = 100f;
+    [Range(1, 500)] public float DefaultScaleSpeed = 300f;
+
+    float currentPlatformSpeed;
+    float currentScaleSpeed;
 
     [Header("1e-10 means no snapping")]
-    [Range(1e-10f, 10)]public float GridStep = 0.5f;
+    [Range(1e-10f, 10)]public float DefaultGridStep = 0.5f;
+
+    float currentGridStep;
     float deltaMouseProcessX;
     float deltaMouseProcessY;
 
     [Header("!!! Smallest scale shouldn't be less than 0.3f !!!")]
-    public Vector3 SmallestScale = new Vector3(0.3f, 0.3f, 0.3f);
-    public Vector3 BiggestScale = new Vector3(5f, 5f, 5f);
+    public Vector3 DefaultSmallestScale = new Vector3(0.3f, 0.3f, 0.3f);
+    public Vector3 DefaultBiggestScale = new Vector3(5f, 5f, 5f);
+
+    Vector3 currentSmallestScale;
+    Vector3 currentBiggestScale;
 
     [Header("Write down the tags for objects to collide")]
     public string[] TRANSFORMObjectTagsToCollide;
@@ -52,7 +60,6 @@ public class UnityPowers : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit TempHit;
 
-
         if (Physics.Raycast(ray, out TempHit, 100, unityArrowLayer))
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
@@ -64,6 +71,23 @@ public class UnityPowers : MonoBehaviour
                 Border = ArrowParent.transform.parent;
                 deltaMouseProcessX = 0;
                 deltaMouseProcessY = 0;
+
+                if(ArrowParent.GetComponent<BaseOptionsOverride>() != null)
+                {
+                    currentPlatformSpeed = ArrowParent.GetComponent<BaseOptionsOverride>().PlatformSpeed;
+                    currentScaleSpeed = ArrowParent.GetComponent<BaseOptionsOverride>().ScaleSpeed;
+                    currentGridStep = ArrowParent.GetComponent<BaseOptionsOverride>().GridStep;
+                    currentSmallestScale = ArrowParent.GetComponent<BaseOptionsOverride>().SmallestScale;
+                    currentBiggestScale = ArrowParent.GetComponent<BaseOptionsOverride>().BiggestScale;
+                }
+                else
+                {
+                    currentPlatformSpeed = DefaultPlatformSpeed;
+                    currentScaleSpeed = DefaultScaleSpeed;
+                    currentGridStep = DefaultGridStep;
+                    currentSmallestScale = DefaultSmallestScale;
+                    currentBiggestScale = DefaultBiggestScale;
+                }
             }
         }
 
@@ -111,29 +135,29 @@ public class UnityPowers : MonoBehaviour
     {
         targetScale = ArrowParent.transform.lossyScale;
 
-        float deltaMouseX = Input.GetAxis("Mouse X") * ScaleSpeed / 250;
-        float deltaMouseY = Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
+        float deltaMouseX = Input.GetAxis("Mouse X") * currentScaleSpeed / 250;
+        float deltaMouseY = Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
 
-        deltaMouseX -= deltaMouseX % GridStep;
-        deltaMouseY -= deltaMouseY % GridStep;
+        deltaMouseX -= deltaMouseX % currentGridStep;
+        deltaMouseY -= deltaMouseY % currentGridStep;
 
         if(deltaMouseX == 0)
         {
-            deltaMouseProcessX += Input.GetAxis("Mouse X") * ScaleSpeed / 250;
+            deltaMouseProcessX += Input.GetAxis("Mouse X") * currentScaleSpeed / 250;
         }
-        if(Mathf.Abs(deltaMouseProcessX) >= GridStep)
+        if(Mathf.Abs(deltaMouseProcessX) >= currentGridStep)
         {
-            deltaMouseX = deltaMouseProcessX - (deltaMouseProcessX % GridStep);
+            deltaMouseX = deltaMouseProcessX - (deltaMouseProcessX % currentGridStep);
             deltaMouseProcessX = 0;
         }
 
         if (deltaMouseY == 0)
         {
-            deltaMouseProcessY += Input.GetAxis("Mouse Y") * ScaleSpeed / 250;
+            deltaMouseProcessY += Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
         }
-        if (Mathf.Abs(deltaMouseProcessY) >= GridStep)
+        if (Mathf.Abs(deltaMouseProcessY) >= currentGridStep)
         {
-            deltaMouseY = deltaMouseProcessY - (deltaMouseProcessY % GridStep);
+            deltaMouseY = deltaMouseProcessY - (deltaMouseProcessY % currentGridStep);
             deltaMouseProcessY = 0;
         }
 
@@ -196,7 +220,7 @@ public class UnityPowers : MonoBehaviour
                 break;
         }
 
-        if (!collided && targetScale.x > SmallestScale.x && targetScale.y > SmallestScale.y && targetScale.z > SmallestScale.z && targetScale.x < BiggestScale.x && targetScale.y < BiggestScale.y && targetScale.z < BiggestScale.z)
+        if (!collided && targetScale.x > currentSmallestScale.x && targetScale.y > currentSmallestScale.y && targetScale.z > currentSmallestScale.z && targetScale.x < currentBiggestScale.x && targetScale.y < currentBiggestScale.y && targetScale.z < currentBiggestScale.z)
         {
             Debug.Log("in scale");
 
@@ -281,17 +305,17 @@ public class UnityPowers : MonoBehaviour
             }
         }
 
-        if (SmallestScale.x >= transform.localScale.x)
+        if (currentSmallestScale.x >= transform.localScale.x)
             Debug.Log("Smallest x scale is bigger than or equal to objects x scale.");
-        if (SmallestScale.y >= transform.localScale.y)
+        if (currentSmallestScale.y >= transform.localScale.y)
             Debug.Log("Smallest y scale is bigger than or equal to objects y scale.");
-        if (SmallestScale.z >= transform.localScale.z)
+        if (currentSmallestScale.z >= transform.localScale.z)
             Debug.Log("Smallest z scale is bigger than or equal to objects z scale.");
-        if (BiggestScale.x <= transform.localScale.x)
+        if (currentBiggestScale.x <= transform.localScale.x)
             Debug.Log("Biggest x scale is smaller than or equal to objects x scale.");
-        if (BiggestScale.y <= transform.localScale.y)
+        if (currentBiggestScale.y <= transform.localScale.y)
             Debug.Log("Biggest y scale is smaller than or equal to objects y scale.");
-        if (BiggestScale.z <= transform.localScale.z)
+        if (currentBiggestScale.z <= transform.localScale.z)
             Debug.Log("Biggest z scale is smaller than or equal to objects z scale.");
     }
 
@@ -305,23 +329,23 @@ public class UnityPowers : MonoBehaviour
 
                 if (transform.position.z <= ArrowParent.transform.position.z)//platformun z olarak arkasýndaysam
                 {
-                    targetPosition.x += Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetPosition.x += Input.GetAxis("Mouse X") * currentPlatformSpeed / 250;
                 }
                 else//platformun z olarak önündeysem
                 {
-                    targetPosition.x -= Input.GetAxis("Mouse X") * PlatformSpeed / 250;
+                    targetPosition.x -= Input.GetAxis("Mouse X") * currentPlatformSpeed / 250;
                 }
                 break;
 
             case "UnityArrowY":
-                targetPosition.y += Input.GetAxis("Mouse Y") * PlatformSpeed / 250;//yukarý aþaðý
+                targetPosition.y += Input.GetAxis("Mouse Y") * currentPlatformSpeed / 250;//yukarý aþaðý
                 break;
 
             case "UnityArrowZ":
                 if (transform.position.x <= ArrowParent.transform.position.x)//platformun x olarak solundaysam
-                    targetPosition.z -= Input.GetAxis("Mouse X") * PlatformSpeed / 250; //saða çekersem geri
+                    targetPosition.z -= Input.GetAxis("Mouse X") * currentPlatformSpeed / 250; //saða çekersem geri
                 else//platformun x olarak saðýndaysam
-                    targetPosition.z += Input.GetAxis("Mouse X") * PlatformSpeed / 250; //saða çekersem ileri
+                    targetPosition.z += Input.GetAxis("Mouse X") * currentPlatformSpeed / 250; //saða çekersem ileri
                 break;
         }
 

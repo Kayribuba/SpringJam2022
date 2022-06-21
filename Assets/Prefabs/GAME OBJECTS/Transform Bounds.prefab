@@ -498,6 +498,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatformSpeed: 100
   ScaleSpeed: 300
+  GridStep: 0.5
+  SmallestScale: {x: 0.3, y: 0.3, z: 0.3}
+  BiggestScale: {x: 5, y: 5, z: 5}
 --- !u!33 &5815393424961447353
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -525,7 +528,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f88c71a4be5295a4ebf55be66b9e5a46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

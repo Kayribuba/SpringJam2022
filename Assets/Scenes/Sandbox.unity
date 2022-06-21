@@ -1958,6 +1958,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5815393424961447354, guid: cb017617a7c4c1341a69b80874b390f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4235bf41b0d92347b813e42c2054c10, type: 2}
     - target: {fileID: 5815393425010927752, guid: cb017617a7c4c1341a69b80874b390f3, type: 3}
       propertyPath: m_Name
       value: Z+

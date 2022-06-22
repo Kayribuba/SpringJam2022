@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6250704018742748710}
   - component: {fileID: 6250704018742748711}
   m_Layer: 6
-  m_Name: ArlsScaleBase
+  m_Name: MixedBase
   m_TagString: UnityScaleBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatformSpeed: 100
   ScaleSpeed: 300
+  GridStep: 0.5
+  SmallestScale: {x: 0.3, y: 0.3, z: 0.3}
+  BiggestScale: {x: 5, y: 5, z: 5}
 --- !u!33 &6250704018742748709
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -75,7 +78,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2c9f919121cde674ba7c6678bdc1d89a, type: 2}
+  - {fileID: 2100000, guid: 76cd9577f2d104940bf6ac6d50e86cfb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

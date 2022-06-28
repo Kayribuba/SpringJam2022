@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseOptionsOverride : MonoBehaviour
 {
+    public bool UseDefaultOptions;
+
     [Range(1, 250)] public float PlatformSpeed = 100f;
     [Range(1, 500)] public float ScaleSpeed = 300f;
 

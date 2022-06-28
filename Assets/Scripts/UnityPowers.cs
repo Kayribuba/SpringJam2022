@@ -49,8 +49,6 @@ public class UnityPowers : MonoBehaviour
 
     void Start()
     {
-        //Collisions = FindObjectOfType<baseCollisionScript>();
-        //CollisionsAreOn = Collisions != null;
         cam = GetComponent<Camera>();
         ArrowParent = safe;
         aSource = GetComponent<AudioSource>();
@@ -72,7 +70,7 @@ public class UnityPowers : MonoBehaviour
                 deltaMouseProcessX = 0;
                 deltaMouseProcessY = 0;
 
-                if(ArrowParent.GetComponent<BaseOptionsOverride>() != null)
+                if(ArrowParent.GetComponent<BaseOptionsOverride>() != null && !ArrowParent.GetComponent<BaseOptionsOverride>().UseDefaultOptions)
                 {
                     currentPlatformSpeed = ArrowParent.GetComponent<BaseOptionsOverride>().PlatformSpeed;
                     currentScaleSpeed = ArrowParent.GetComponent<BaseOptionsOverride>().ScaleSpeed;

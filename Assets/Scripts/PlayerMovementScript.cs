@@ -9,6 +9,7 @@ public class PlayerMovementScript : MonoBehaviour
     public float Speed = 12f;
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
+    public float coyoteTime = 0.5f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -26,7 +27,11 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void CheckGrounded()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
+        {
+            isGrounded = true;
+
+        }
 
         if (isGrounded && velocity.y < 0)
         {

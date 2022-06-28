@@ -23646,11 +23646,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   safe: {fileID: 349244431}
-  PlatformSpeed: 100
-  ScaleSpeed: 300
-  GridStep: 0.5
-  SmallestScale: {x: 0.3, y: 0.3, z: 0.3}
-  BiggestScale: {x: 5, y: 5, z: 5}
+  DefaultPlatformSpeed: 100
+  DefaultScaleSpeed: 300
+  DefaultGridStep: 0.5
+  DefaultSmallestScale: {x: 0.3, y: 0.3, z: 0.3}
+  DefaultBiggestScale: {x: 5, y: 5, z: 5}
   TRANSFORMObjectTagsToCollide: []
   SCALEObjectTagsToCollide: []
   glowMaterial: {fileID: 0}
@@ -26494,7 +26494,7 @@ BoxCollider:
   m_GameObject: {fileID: 6643555042036454988}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

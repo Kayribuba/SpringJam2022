@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Intro_for_transform.unity
     guid: a861dc8147d54b9419c14013a1eaaf6f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/Tutorial2.unity
     guid: accc5480f127ded489944134d039b9a5
   - enabled: 1

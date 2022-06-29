@@ -7,6 +7,7 @@ public class DialogueMangerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI SubtitleTextMesh;
     [SerializeField] Animator SubAnimator;
+    [SerializeField] InteractionScript IS;
     [Range(0f, 5f)][SerializeField] float cooldownSeconds = 1f;
 
     public Queue<DialogueObject> dialogueQueue = new Queue<DialogueObject>();
@@ -36,6 +37,14 @@ public class DialogueMangerScript : MonoBehaviour
         {
             SubAnimator.SetBool("SubsOn", false);
             SubtitleTextMesh.text = "";
+        }
+
+        if(currentDialogue.TriggerEvent == true)
+        {
+            foreach(GameObject GOToEffect in currentDialogue.objectsToEffect)
+            {
+                IS.Interact(currentDialogue.interactionType, GOToEffect);
+            }
         }
     }
     void StartDialogue()

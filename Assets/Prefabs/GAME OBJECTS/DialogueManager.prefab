@@ -340,6 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1650221061147158929}
   - component: {fileID: 248167450}
+  - component: {fileID: 3789460295578610810}
   - component: {fileID: 248167451}
   m_Layer: 0
   m_Name: DialogueManager
@@ -378,6 +379,18 @@ MonoBehaviour:
   SubtitleTextMesh: {fileID: 1277111326}
   SubAnimator: {fileID: 2033875892}
   cooldownSeconds: 1
+--- !u!114 &3789460295578610810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316725965181442873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f60f7368cb40f4190980bdbab15390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &248167451
 AudioSource:
   m_ObjectHideFlags: 0

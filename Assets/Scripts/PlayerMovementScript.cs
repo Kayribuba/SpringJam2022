@@ -31,7 +31,6 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void CheckGrounded()
     {
-        Debug.Log(isGrounded);
         if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
         {
             isGrounded = true;
@@ -74,7 +73,7 @@ public class PlayerMovementScript : MonoBehaviour
         if(pressedJumpButton && isGrounded && nextJump <= Time.time)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            nextJump = Time.time + 0.2f;
+            nextJump = Time.time + 0.7f;
         }
 
 

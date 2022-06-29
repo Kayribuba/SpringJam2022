@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueText: (Exit button gets added)
   clip: {fileID: 8300000, guid: 4d64c7d73cf656e4da2348eb4eed8871, type: 3}
   TextColor: {r: 1, g: 1, b: 1, a: 1}
-  TriggerEvent: 1
+  TriggerEvent: 0
   UseSlotID:
   - popX
   interactionType: 1

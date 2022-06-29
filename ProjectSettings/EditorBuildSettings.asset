@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Slide.unity
     guid: a32db21064a5ef047a14ce767a5c20eb
   - enabled: 1
+    path: Assets/Levels/Transform Tutorial's Tutorial.unity
+    guid: f8d89440bdfc2e4408e4d6aa2e71479e
+  - enabled: 1
+    path: Assets/Levels/Transform Tutorial.unity
+    guid: 93a3a77ce1e104445a3cc347022e0b79
+  - enabled: 1
     path: Assets/Murat Yeni Oyuncak buldu/Oyuncak 1.unity
     guid: 84b00d20cdc9a9d40882c0dcbefcf808
   - enabled: 1

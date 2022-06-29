@@ -6,6 +6,8 @@ using UnityEngine;
 public class DialogueMangerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI SubtitleTextMesh;
+    [SerializeField] GameObject[] EffectObjectSlot;
+    [SerializeField] string[] ObjectIDs;
     [SerializeField] Animator SubAnimator;
     [SerializeField] InteractionScript IS;
     [Range(0f, 5f)][SerializeField] float cooldownSeconds = 1f;
@@ -17,9 +19,15 @@ public class DialogueMangerScript : MonoBehaviour
     bool dialogueStarted;
     float targetTime = -1;
 
+    Dictionary<string, GameObject> IdToGameobject = new Dictionary<string,GameObject>();
+
     void Start()
     {
         DialogueAudioSource = GetComponent<AudioSource>();
+        for(int i = 0; i < ObjectIDs.Length; i++)
+        {
+            IdToGameobject.Add(ObjectIDs[i], EffectObjectSlot[i]);
+        }
     }
     void Update()
     {
@@ -41,9 +49,9 @@ public class DialogueMangerScript : MonoBehaviour
 
         if(currentDialogue.TriggerEvent == true)
         {
-            foreach(GameObject GOToEffect in currentDialogue.objectsToEffect)
+            foreach(string slotID in currentDialogue.UseSlotID)
             {
-                IS.Interact(currentDialogue.interactionType, GOToEffect);
+                IS.Interact(currentDialogue.interactionType, IdToGameobject[slotID]);
             }
         }
     }

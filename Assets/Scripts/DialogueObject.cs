@@ -10,6 +10,6 @@ public class DialogueObject : ScriptableObject
     public Color TextColor = Color.white;
     [Header("Trigger Events")]
     public bool TriggerEvent;
-    public GameObject[] objectsToEffect;
+    public string[] UseSlotID;
     public InteractionType interactionType;
 }

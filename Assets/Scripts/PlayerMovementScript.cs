@@ -16,7 +16,11 @@ public class PlayerMovementScript : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
+    float coyoteTimeCooldown = 0;
+    float nextJump;
+    float disableJumpAt;
     bool isGrounded;
+    bool pressedJumpButton;
 
     void Update()
     {
@@ -27,10 +31,19 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void CheckGrounded()
     {
+        Debug.Log(isGrounded);
         if (Physics.CheckSphere(groundCheck.position, groundDistance, groundMask))
         {
             isGrounded = true;
-
+            coyoteTimeCooldown = Time.time + coyoteTime; 
+        }
+        else if (Time.time < coyoteTimeCooldown)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
         }
 
         if (isGrounded && velocity.y < 0)
@@ -53,12 +66,23 @@ public class PlayerMovementScript : MonoBehaviour
 
         Vector3 move = transform.right * h + transform.forward * v;
         
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump"))
+            disableJumpAt = Time.time + 0.2f;
+
+        pressedJumpButton = Time.time <= disableJumpAt;
+
+        if(pressedJumpButton && isGrounded && nextJump <= Time.time)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            nextJump = Time.time + 0.2f;
         }
 
 
         controller.Move(move * Speed * Time.deltaTime);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
     }
 }

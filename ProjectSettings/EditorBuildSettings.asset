@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OpeningScene.unity
     guid: 430a8959f0507de4d970f830780e8c6b
   - enabled: 1
+    path: Assets/Levels/Tutorial3.unity
+    guid: c1e40b6e40db60c408f1ecc1e4411f12
+  - enabled: 0
     path: Assets/Scenes/Slide.unity
     guid: a32db21064a5ef047a14ce767a5c20eb
   - enabled: 1
@@ -26,15 +29,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Shooter.unity
     guid: e4255556eb9a3fb42a64961e83722636
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/Intro_for_transform.unity
     guid: a861dc8147d54b9419c14013a1eaaf6f
   - enabled: 0
     path: Assets/Levels/Tutorial2.unity
     guid: accc5480f127ded489944134d039b9a5
-  - enabled: 1
-    path: Assets/Levels/Tutorial3.unity
-    guid: c1e40b6e40db60c408f1ecc1e4411f12
   - enabled: 0
     path: Assets/Levels/Tutorial4.unity
     guid: 2309a687c95e6df44aeec9c54e861c3a

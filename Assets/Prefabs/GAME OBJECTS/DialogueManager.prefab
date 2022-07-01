@@ -377,7 +377,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SubtitleTextMesh: {fileID: 1277111326}
+  EffectObjectSlot: []
+  ObjectIDs: []
   SubAnimator: {fileID: 2033875892}
+  IS: {fileID: 3789460295578610810}
   cooldownSeconds: 1
 --- !u!114 &3789460295578610810
 MonoBehaviour:

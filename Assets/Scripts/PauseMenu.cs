@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public bool GameIsPaused { get; private set; }
     [SerializeField]Canvas PauseMenuCanvas;
+    [SerializeField]Canvas OptionsMenuCanvas;
     [SerializeField] GameObject player;
 
     AudioPlayer AP;
@@ -65,6 +66,7 @@ public class PauseMenu : MonoBehaviour
         if (GameIsPaused)
         {
             PauseMenuCanvas.gameObject.SetActive(false);
+            OptionsMenuCanvas.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             GameIsPaused = false;
@@ -92,9 +94,5 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
-    }
-    public void Options()
-    {
-
     }
 }

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1289427069354419276}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.6881344, y: 0.005680299, z: -0.020631284}
-  m_LocalScale: {x: 0.025167089, y: 0.33385587, z: 0.009160047}
+  m_LocalScale: {x: 0.028609183, y: 0.3795172, z: 0.010412864}
   m_Children: []
   m_Father: {fileID: 1289427070733169456}
   m_RootOrder: 0
@@ -92,8 +92,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.195182
-  m_Height: 2.3003416
+  m_Radius: 8
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0.000045776367, y: 0.15016943, z: 0}
 --- !u!1 &1289427070409431849
@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 1289427070409431849}
   m_LocalRotation: {x: -0.00000087221395, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0016869634, y: 1.3464562, z: -0.004135598}
-  m_LocalScale: {x: 0.007471397, y: 1.1245793, z: 0.009160047}
+  m_LocalScale: {x: 0.008493257, y: 1.2783877, z: 0.010412864}
   m_Children: []
   m_Father: {fileID: 1289427070733169456}
   m_RootOrder: 1
@@ -188,8 +188,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.1951814
-  m_Height: 2.3003407
+  m_Radius: 8
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: -0.000091552734, y: 0.15017079, z: -4.3705317e-12}
 --- !u!1 &1289427070526343260
@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 1289427070526343260}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -0.5}
-  m_LocalScale: {x: 0.007471397, y: 0.40931234, z: 0.025167089}
+  m_LocalScale: {x: 0.008493257, y: 0.46529382, z: 0.028609183}
   m_Children: []
   m_Father: {fileID: 1289427070733169456}
   m_RootOrder: 5
@@ -284,10 +284,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.195186
-  m_Height: 2.3003423
+  m_Radius: 8
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: -0.000061035156, y: 0.15016897, z: -0.00002993528}
+  m_Center: {x: 0.112780884, y: 0.17487831, z: -0.0024503341}
 --- !u!1 &1289427070733169457
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 1289427071071401620}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -1.3405439, z: 0}
-  m_LocalScale: {x: 0.007471397, y: 1.1245793, z: 0.009160047}
+  m_LocalScale: {x: 0.008493257, y: 1.2783877, z: 0.010412864}
   m_Children: []
   m_Father: {fileID: 1289427070733169456}
   m_RootOrder: 4
@@ -520,8 +520,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.1951814
-  m_Height: 2.3003407
+  m_Radius: 8
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: -0.000091552734, y: 0.15016912, z: 0}
 --- !u!1 &1289427071287110988
@@ -552,7 +552,7 @@ Transform:
   m_GameObject: {fileID: 1289427071287110988}
   m_LocalRotation: {x: -0.70710623, y: 0.7071045, z: -0.0014195949, w: 0.0014195688}
   m_LocalPosition: {x: -0.76, y: 0.02, z: -0.020631284}
-  m_LocalScale: {x: 0.025167089, y: 0.33385587, z: 0.009160047}
+  m_LocalScale: {x: 0.028609183, y: 0.3795172, z: 0.010412864}
   m_Children: []
   m_Father: {fileID: 1289427070733169456}
   m_RootOrder: 3
@@ -616,8 +616,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.195183
-  m_Height: 2.3003411
+  m_Radius: 8
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: -0.00009131555, y: 0.15017225, z: 0}
 --- !u!1 &1289427071422934047
@@ -648,7 +648,7 @@ Transform:
   m_GameObject: {fileID: 1289427071422934047}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 0.007471397, y: 0.40931234, z: 0.025167089}
+  m_LocalScale: {x: 0.008493257, y: 0.46529382, z: 0.028609183}
   m_Children: []
   m_Father: {fileID: 1289427070733169456}
   m_RootOrder: 2
@@ -712,8 +712,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.195182
-  m_Height: 2.300342
+  m_Radius: 8
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: -0.000091552734, y: 0.15017135, z: -0.000030517578}
 --- !u!1001 &3728423797984630332

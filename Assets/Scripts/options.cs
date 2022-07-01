@@ -13,10 +13,6 @@ public class options : MonoBehaviour
 
     AudioSource MusicAudioSource;
 
-    private void Start()
-    {
-        musicValuebar.value = MusicAudioSource.volume;
-    }
     public void SetVolume()
     {
         valuee = valuebar.value;
@@ -29,6 +25,14 @@ public class options : MonoBehaviour
         {
             valuee = musicValuebar.value;
             MusicAudioSource.volume = valuee;
+        }
+    }
+    public void SetMusicValuebarValue()
+    {
+        MusicAudioSource = FindObjectOfType<AudioSource>();
+        if (MusicAudioSource != null)
+        {
+            musicValuebar.value = MusicAudioSource.volume;
         }
     }
 }

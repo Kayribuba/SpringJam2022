@@ -3386,6 +3386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casual Platform (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
 --- !u!1 &389353082
@@ -3652,6 +3656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casual Platform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
 --- !u!4 &404236198 stripped
@@ -3717,6 +3725,10 @@ PrefabInstance:
     - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
       propertyPath: m_Name
       value: Casual Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
@@ -6510,6 +6522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casual Platform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
 --- !u!1 &1006964619
@@ -7076,6 +7092,10 @@ PrefabInstance:
     - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
       propertyPath: m_Name
       value: Casual Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
@@ -8139,6 +8159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casual Platform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
 --- !u!4 &1228420290 stripped
@@ -8417,7 +8441,7 @@ BoxCollider:
   m_GameObject: {fileID: 1274432910}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10013,7 +10037,7 @@ BoxCollider:
   m_GameObject: {fileID: 1478744629}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -13614,6 +13638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casual Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
 --- !u!4 &2109670376 stripped
@@ -13679,6 +13707,10 @@ PrefabInstance:
     - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
       propertyPath: m_Name
       value: Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721424088290679941, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe98e1f7f210384abbce52df91218b3, type: 3}

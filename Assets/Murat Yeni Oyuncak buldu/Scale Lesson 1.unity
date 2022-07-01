@@ -1842,6 +1842,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8944379726810745113, guid: 57b3030d7e1e8bf47b8cac2be25637d5, type: 3}
+      propertyPath: GridStep
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944379726810745113, guid: 57b3030d7e1e8bf47b8cac2be25637d5, type: 3}
+      propertyPath: ScaleSpeed
+      value: 357
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944379726810745113, guid: 57b3030d7e1e8bf47b8cac2be25637d5, type: 3}
+      propertyPath: PlatformSpeed
+      value: 139
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944379726810745113, guid: 57b3030d7e1e8bf47b8cac2be25637d5, type: 3}
       propertyPath: BiggestScale.x
       value: 13
       objectReference: {fileID: 0}

@@ -83,6 +83,7 @@ MonoBehaviour:
   Speed: 12
   jumpHeight: 3
   gravity: -20
+  coyoteTime: 0.5
   groundCheck: {fileID: 6554101338514422195}
   groundDistance: 0.4
   groundMask:

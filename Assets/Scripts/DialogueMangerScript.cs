@@ -35,6 +35,9 @@ public class DialogueMangerScript : MonoBehaviour
             EndDialogue();
         if (dialogueQueue.Count > 0 && !DialogueAudioSource.isPlaying && targetTime < Time.time)
             StartDialogue();
+
+        if(Input.GetKeyDown(KeyCode.X))
+            DialogueAudioSource.Stop();
     }
 
     void EndDialogue()

@@ -20,7 +20,10 @@ public class options : MonoBehaviour
     }
     public void SetMusicValue()
     {
-        MusicAudioSource = FindObjectOfType<AudioSource>();
+        if (FindObjectOfType<AudioPlayer>() == null)
+            return;
+
+        MusicAudioSource = FindObjectOfType<AudioPlayer>().GetComponent<AudioSource>();
         if (MusicAudioSource != null)
         {
             valuee = musicValuebar.value;
@@ -29,6 +32,9 @@ public class options : MonoBehaviour
     }
     public void SetMusicValuebarValue()
     {
+        if (FindObjectOfType<AudioPlayer>() == null)
+            return;
+
         MusicAudioSource = FindObjectOfType<AudioSource>();
         if (MusicAudioSource != null)
         {

@@ -7,10 +7,11 @@ using UnityEngine.Audio;
 public class options : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public AudioSource MusicAudioSource;
     public Slider valuebar;
     public Slider musicValuebar;
     float valuee;
+
+    AudioSource MusicAudioSource;
 
     private void Start()
     {
@@ -23,7 +24,11 @@ public class options : MonoBehaviour
     }
     public void SetMusicValue()
     {
-        valuee = musicValuebar.value;
-        MusicAudioSource.volume = valuee;
+        MusicAudioSource = FindObjectOfType<AudioSource>();
+        if (MusicAudioSource != null)
+        {
+            valuee = musicValuebar.value;
+            MusicAudioSource.volume = valuee;
+        }
     }
 }

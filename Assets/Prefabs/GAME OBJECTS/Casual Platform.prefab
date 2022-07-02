@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 721424088290679936}
   m_Layer: 6
   m_Name: Casual Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

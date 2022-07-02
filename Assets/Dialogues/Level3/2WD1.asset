@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2WD1
   m_EditorClassIdentifier: 
   dialogueText: Ah some platforms are missing FUCK!!
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+  clip: {fileID: 8300000, guid: 7b2edcd302d4b284aa879b101bf9628c, type: 3}
   textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   TriggerEvent: 0

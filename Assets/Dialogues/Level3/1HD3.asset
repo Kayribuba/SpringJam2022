@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
   m_Name: 1HD3
   m_EditorClassIdentifier: 
-  dialogueText: Ah man it looks cool. I hope you kept developing it.
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+  dialogueText: Ah man it looks so cool. I wish you kept developing it.
+  clip: {fileID: 8300000, guid: f2951915ba93cd04fbb8ca237133aae5, type: 3}
   textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0

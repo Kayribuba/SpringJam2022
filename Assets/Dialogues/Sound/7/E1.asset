@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
-  m_Name: 1WD7
+  m_Name: E1
   m_EditorClassIdentifier: 
-  dialogueText: Great.
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
-  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
-  TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
+  dialogueText: Your little friend can't help you anymore.
+  clip: {fileID: 8300000, guid: 1e2953fb39170c34c9e78f4866e73a39, type: 3}
+  textFont: {fileID: 11400000, guid: bbd3fec967da1ed46ae78ab5b1693f44, type: 2}
+  TextColor: {r: 1, g: 0, b: 0, a: 1}
   TriggerEvent: 0
   UseSlotID: []
   interactionType: 0

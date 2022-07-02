@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
   m_Name: 1HD6
   m_EditorClassIdentifier: 
-  dialogueText: The game... It got more glitchy...
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+  dialogueText: Ohh... Great.
+  clip: {fileID: 8300000, guid: 0c7ea0ea36ac5994ca6e26b6a55c8ee3, type: 3}
   textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0

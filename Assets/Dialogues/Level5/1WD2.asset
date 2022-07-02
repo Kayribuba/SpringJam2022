@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1WD2
   m_EditorClassIdentifier: 
   dialogueText: What are you doin--
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+  clip: {fileID: 8300000, guid: 1fe0e9d48eb7e1940bb9ec649e3c6360, type: 3}
   textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   TriggerEvent: 0

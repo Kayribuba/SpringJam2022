@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GlitchBossFight.unity
     guid: 738fc599c9c59734c83777228312ae16
   - enabled: 1
+    path: Assets/Scenes/outro.unity
+    guid: 7dd682cd6ddcdc746a51e504efaea389
+  - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 432b45f50de8cd6408b9f489a693e568
   m_configObjects: {}

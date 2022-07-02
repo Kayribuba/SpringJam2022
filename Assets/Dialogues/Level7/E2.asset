@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
-  m_Name: 7WD2
+  m_Name: E2
   m_EditorClassIdentifier: 
-  dialogueText: Helen? Are you there?
-  clip: {fileID: 8300000, guid: d3658c97260d8c14badbe8e949156360, type: 3}
-  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
-  TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
+  dialogueText: YOU ABANDONED ME YEARS AGO AND NOW YOU DON'T EVEN REMEMBER ME. I
+    WAS YOUR PASSION PROJECT FOR YEARS BUT YOU LEFT ME IN A BLINK OF AN EYE.
+  clip: {fileID: 8300000, guid: 766a433072469044b825fb90ca12eba3, type: 3}
+  textFont: {fileID: 11400000, guid: bbd3fec967da1ed46ae78ab5b1693f44, type: 2}
+  TextColor: {r: 1, g: 0, b: 0, a: 1}
   TriggerEvent: 0
   UseSlotID: []
   interactionType: 0

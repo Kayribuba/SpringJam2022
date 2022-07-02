@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
-  m_Name: E1
+  m_Name: E3
   m_EditorClassIdentifier: 
-  dialogueText: Your little friend can't help you anymore.
-  clip: {fileID: 8300000, guid: 1e2953fb39170c34c9e78f4866e73a39, type: 3}
+  dialogueText: NOW I WILL ERASE YOU FROM EXISTENCE JUST LIKE HOW YOU TRIED TO ERASE
+    ME YEARS AGO.
+  clip: {fileID: 8300000, guid: 853a9ea09cf060449b5f42686f56961b, type: 3}
   textFont: {fileID: 11400000, guid: bbd3fec967da1ed46ae78ab5b1693f44, type: 2}
   TextColor: {r: 1, g: 0, b: 0, a: 1}
-  TriggerEvent: 0
-  UseSlotID: []
-  interactionType: 0
+  TriggerEvent: 1
+  UseSlotID:
+  - SignArrowEnable1
+  - SignArrowEnable2
+  - SignArrowEnable3
+  - SignArrowEnable4
+  - GlicthSliderEnable
+  interactionType: 1

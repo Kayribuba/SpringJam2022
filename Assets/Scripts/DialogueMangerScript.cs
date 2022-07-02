@@ -8,6 +8,7 @@ public class DialogueMangerScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI SubtitleTextMesh;
     public GameObject[] EffectObjectSlot;
     public string[] ObjectIDs;
+    public TMP_FontAsset defaultFont;
     [SerializeField] Animator SubAnimator;
     [SerializeField] InteractionScript IS;
     [Range(0f, 5f)][SerializeField] float cooldownSeconds = 1f;
@@ -69,6 +70,12 @@ public class DialogueMangerScript : MonoBehaviour
         currentDialogue = dialogueQueue.Dequeue();
         DialogueAudioSource.PlayOneShot(currentDialogue.clip);
         SubtitleTextMesh.color = currentDialogue.TextColor;
+
+        if (currentDialogue.textFont != null)
+            SubtitleTextMesh.font = currentDialogue.textFont;
+        else
+            SubtitleTextMesh.font = defaultFont;
+
         SubtitleTextMesh.text = currentDialogue.dialogueText;
         targetTime = Time.time + cooldownSeconds;
     }

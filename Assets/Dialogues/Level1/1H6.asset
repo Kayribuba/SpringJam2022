@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: Worth a shot!
   clip: {fileID: 8300000, guid: 63c252d2e23507544843f6d59bdd43f9, type: 3}
+  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0
-  objectsToEffect: []
+  UseSlotID: []
   interactionType: 0

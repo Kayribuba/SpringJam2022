@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseDefaultOptions: 0
-  PlatformSpeed: 100
+  PlatformSpeed: 200
   ScaleSpeed: 300
   GridStep: 0.5
   SmallestScale: {x: 0.3, y: 0.3, z: 0.3}

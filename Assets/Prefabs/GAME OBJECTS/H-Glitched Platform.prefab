@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 342091035068415651}
   - component: {fileID: 342091035068415650}
   - component: {fileID: 342091035068415653}
-  - component: {fileID: 342091035068415649}
   m_Layer: 6
   m_Name: H-Glitched Platform
   m_TagString: Ground
@@ -97,24 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2379887, y: 1.3909807, z: 1.0441979}
   m_Center: {x: -0.0028324723, y: -0.19549036, z: -0.0016998291}
---- !u!114 &342091035068415649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342091035068415652}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 10
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &4537704694026931704
 PrefabInstance:
   m_ObjectHideFlags: 0

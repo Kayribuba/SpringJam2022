@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueText: The classic story, everyone was enthusiastic at first. Then the group
     started to separate and the lessons kept us busy enough for us to develop this
     game.
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
   textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   TriggerEvent: 0

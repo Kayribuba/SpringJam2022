@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1HD2
   m_EditorClassIdentifier: 
   dialogueText: Then what happened?
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
   textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0

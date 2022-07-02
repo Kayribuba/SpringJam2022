@@ -51,7 +51,15 @@ public class AudioPlayer : MonoBehaviour
                     source.Play();
                 }
                 break;
-            case 8:
+            case 9:
+                if (oldLevel != level)
+                {
+                    source.clip = clips[6];
+                    oldLevel = level;
+                    source.PlayOneShot(source.clip);
+                }
+                break;
+            case 10:
                 if (oldLevel != level)
                 {
                     source.clip = clips[5];

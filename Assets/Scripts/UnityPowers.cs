@@ -325,14 +325,23 @@ public class UnityPowers : MonoBehaviour
         {
             case "UnityArrowX":
 
-                if (transform.position.z <= ArrowParent.transform.position.z)//platformun z olarak arkasýndaysam
-                {
+                if (transform.position.z <= ArrowParent.transform.position.z)
                     targetPosition.x += Input.GetAxis("Mouse X") * currentPlatformSpeed / 250;
-                }
-                else//platformun z olarak önündeysem
-                {
+                else
                     targetPosition.x -= Input.GetAxis("Mouse X") * currentPlatformSpeed / 250;
+
+                Collider[] collidedObjs = Physics.OverlapBox(ArrowParent.transform.position, new Vector3(50, 50, ArrowParent.transform.parent.localScale.z * ArrowParent.transform.localScale.z));
+                foreach(Collider col in collidedObjs)
+                {
+                    if(col.CompareTag(Constants.PlayerTag))
+                    {
+                        if (transform.position.x <= ArrowParent.transform.position.x)
+                            targetPosition.x += Input.GetAxis("Mouse Y") * currentPlatformSpeed / 250;
+                        else
+                            targetPosition.x -= Input.GetAxis("Mouse Y") * currentPlatformSpeed / 250;
+                    }
                 }
+
                 break;
 
             case "UnityArrowY":
@@ -340,10 +349,22 @@ public class UnityPowers : MonoBehaviour
                 break;
 
             case "UnityArrowZ":
-                if (transform.position.x <= ArrowParent.transform.position.x)//platformun x olarak solundaysam
-                    targetPosition.z -= Input.GetAxis("Mouse X") * currentPlatformSpeed / 250; //saða çekersem geri
-                else//platformun x olarak saðýndaysam
-                    targetPosition.z += Input.GetAxis("Mouse X") * currentPlatformSpeed / 250; //saða çekersem ileri
+                if (transform.position.x <= ArrowParent.transform.position.x)
+                    targetPosition.z -= Input.GetAxis("Mouse X") * currentPlatformSpeed / 250;
+                else
+                    targetPosition.z += Input.GetAxis("Mouse X") * currentPlatformSpeed / 250;
+
+                collidedObjs = Physics.OverlapBox(ArrowParent.transform.position, new Vector3(ArrowParent.transform.parent.localScale.x * ArrowParent.transform.localScale.x, 50, 50));
+                foreach (Collider col in collidedObjs)
+                {
+                    if (col.CompareTag(Constants.PlayerTag))
+                    {
+                        if (transform.position.z <= ArrowParent.transform.position.z)
+                            targetPosition.z += Input.GetAxis("Mouse Y") * currentPlatformSpeed / 250;
+                        else
+                            targetPosition.z -= Input.GetAxis("Mouse Y") * currentPlatformSpeed / 250;
+                    }
+                }
                 break;
         }
 

@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
-  m_Name: 1WD2
+  m_Name: 7HD1
   m_EditorClassIdentifier: 
-  dialogueText: The classic story, everyone was enthusiastic at first. Then the group
-    started to separate and the lessons kept us busy enough for us to develop this
-    game.
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
-  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
-  TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
+  dialogueText: William, I think that's the final portal!s
+  clip: {fileID: 8300000, guid: 7e47ba37b0b9cc342b4cc1ec3ce8ae53, type: 3}
+  textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
+  TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0
   UseSlotID: []
   interactionType: 0

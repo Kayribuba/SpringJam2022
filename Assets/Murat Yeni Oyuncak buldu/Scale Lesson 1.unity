@@ -8210,7 +8210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945978408526981540, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: dialoguesToEnqueue.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2945978408526981540, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: dialoguesToEnqueue.Array.data[0]
@@ -8251,19 +8251,19 @@ PrefabInstance:
     - target: {fileID: 2945978408526981540, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: dialoguesToEnqueue.Array.data[9]
       value: 
-      objectReference: {fileID: 11400000, guid: aee98d21f89ce4e4893eea3c035ea89c, type: 2}
+      objectReference: {fileID: 11400000, guid: 1757dda0280dc23408d01ca469d5b1b2, type: 2}
     - target: {fileID: 2945978408526981540, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: dialoguesToEnqueue.Array.data[10]
       value: 
-      objectReference: {fileID: 11400000, guid: 0c9238a7d00814b468b76bbe4e716f0a, type: 2}
+      objectReference: {fileID: 11400000, guid: aee98d21f89ce4e4893eea3c035ea89c, type: 2}
     - target: {fileID: 2945978408526981540, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: dialoguesToEnqueue.Array.data[11]
       value: 
-      objectReference: {fileID: 11400000, guid: 6f9ca42ca5d5ad441bc43ccbe51b6beb, type: 2}
+      objectReference: {fileID: 11400000, guid: 0c9238a7d00814b468b76bbe4e716f0a, type: 2}
     - target: {fileID: 2945978408526981540, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: dialoguesToEnqueue.Array.data[12]
       value: 
-      objectReference: {fileID: 11400000, guid: 05a8d6990692e6c45b24a7b89d380949, type: 2}
+      objectReference: {fileID: 11400000, guid: 6f9ca42ca5d5ad441bc43ccbe51b6beb, type: 2}
     - target: {fileID: 2945978408526981541, guid: 641738615c1894c4ba32d31ece6aaf82, type: 3}
       propertyPath: m_Name
       value: DialogueTriger

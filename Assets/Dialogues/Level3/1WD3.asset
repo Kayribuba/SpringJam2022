@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
-  m_Name: 1WD2
+  m_Name: 1WD3
   m_EditorClassIdentifier: 
-  dialogueText: You mean the colliders? They are basically what's preventing me from
-    falling to infinity. Important stuff.
-  clip: {fileID: 8300000, guid: 6021930cffda13f49ae640ae47847790, type: 3}
+  dialogueText: Nah, it was doomed to fail. We kept our scope too big and at the
+    end we found ourselves in development hell.
+  clip: {fileID: 8300000, guid: ad6859fcd1e58b84cbba9afe12db3636, type: 3}
   textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   TriggerEvent: 0

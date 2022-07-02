@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: I'm so sorry, I found that you have CS GO installed and I pressed
     R when I tried to reload.
-  clip: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+  clip: {fileID: 8300000, guid: e6fb5dd47598a944ba43bdf1b6502a60, type: 3}
   textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0

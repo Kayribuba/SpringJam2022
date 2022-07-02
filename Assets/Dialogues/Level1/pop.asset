@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
   m_Name: pop
   m_EditorClassIdentifier: 
-  dialogueText: (Exit button gets added)
+  dialogueText: Exit button gets added
   clip: {fileID: 8300000, guid: 4d64c7d73cf656e4da2348eb4eed8871, type: 3}
+  textFont: {fileID: 0}
   TextColor: {r: 1, g: 1, b: 1, a: 1}
   TriggerEvent: 0
   UseSlotID:

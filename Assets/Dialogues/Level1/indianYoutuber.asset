@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b63c72c5b8f7949bd1d92d4ba893c6, type: 3}
   m_Name: indianYoutuber
   m_EditorClassIdentifier: 
-  dialogueText: (A video gets played)
+  dialogueText: A video gets played
   clip: {fileID: 8300000, guid: 1266360210bf60f4185006a40f80c969, type: 3}
-  TextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  textFont: {fileID: 0}
+  TextColor: {r: 1, g: 1, b: 1, a: 1}
   TriggerEvent: 0
-  objectsToEffect: []
+  UseSlotID: []
   interactionType: 0

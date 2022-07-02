@@ -28,35 +28,35 @@ public class AudioPlayer : MonoBehaviour
         switch(level)
         {
             case 0:
-                if (oldLevel != 0)
+                if (oldLevel != level)
                 {
                     source.clip = clips[0];
-                    oldLevel = 0;
+                    oldLevel = level;
                     source.Play();
                 }
                 break;
             case 1:
-                if (oldLevel != 1)
+                if (oldLevel != level)
                 {
                     source.clip = clips[6];
-                    oldLevel = 1;
+                    oldLevel = level;
                     source.Play();
                 }
                 break;
             case 2:
-                if (oldLevel != 2)
+                if (oldLevel != level)
                 {
                     source.clip = clips[2];
-                    oldLevel = 2;
+                    oldLevel = level;
                     source.Play();
                 }
                 break;
             case 8:
-                if (oldLevel != 7)
+                if (oldLevel != level)
                 {
                     source.clip = clips[5];
-                    oldLevel = 7;
-                    source.Play();
+                    oldLevel = level;
+                    source.PlayOneShot(source.clip);
                 }
                 break;
         }

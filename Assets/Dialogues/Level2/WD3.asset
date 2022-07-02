@@ -15,6 +15,7 @@ MonoBehaviour:
   dialogueText: Uhh you idiot! This is what you get for sleeping in unity lessons.
     Just click W from your keyboard
   clip: {fileID: 0}
+  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   TriggerEvent: 0
   UseSlotID: []

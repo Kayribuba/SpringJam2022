@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueText: Hmm, his computer is on. Oh, are you still working on that old game?
     Let me close it.
   clip: {fileID: 8300000, guid: f33f988b741b9b1439bc18d1cf48e5c0, type: 3}
-  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
+  textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0
   UseSlotID: []

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueText: Yeah you're right. Because being pulled into a game engine is a every
     day occurrence. What the hell am I supposed to say them William?
   clip: {fileID: 8300000, guid: 5bc64e41d69da9a4ea213a843c950d15, type: 3}
-  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
+  textFont: {fileID: 11400000, guid: afd714104d2c15f499c759e3c9051f63, type: 2}
   TextColor: {r: 0, g: 1, b: 0, a: 1}
   TriggerEvent: 0
   UseSlotID: []

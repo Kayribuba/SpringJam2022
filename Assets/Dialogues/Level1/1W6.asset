@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: Ok but first you need put something to get me to the next level.
   clip: {fileID: 8300000, guid: 6411b00751f3e034ebb3da24ce79d426, type: 3}
+  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5, b: 1, a: 1}
   TriggerEvent: 0
-  objectsToEffect: []
+  UseSlotID: []
   interactionType: 0

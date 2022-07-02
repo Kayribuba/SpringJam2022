@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: Hey, don't you dare close it you idiot!
   clip: {fileID: 8300000, guid: 0beae3cd53fabb24e8ed6e92f0734cc5, type: 3}
+  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5, b: 1, a: 1}
   TriggerEvent: 0
-  objectsToEffect: []
+  UseSlotID: []
   interactionType: 0

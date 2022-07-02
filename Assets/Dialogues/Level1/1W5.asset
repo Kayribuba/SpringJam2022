@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: Hmm... Maybe if finish the level I could escape from here.
   clip: {fileID: 8300000, guid: b60181ed3e7d6a34680af89c6cdee828, type: 3}
+  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5, b: 1, a: 1}
   TriggerEvent: 0
-  objectsToEffect: []
+  UseSlotID: []
   interactionType: 0

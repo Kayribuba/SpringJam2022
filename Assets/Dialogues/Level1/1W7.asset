@@ -15,7 +15,8 @@ MonoBehaviour:
   dialogueText: Just search it on youtube and click on the first indian guy you can
     find.
   clip: {fileID: 8300000, guid: 0f1e5c8198d38a44d9b5df45f031ec52, type: 3}
+  textFont: {fileID: 11400000, guid: a0b614eac8251ae44a730a61e6d3f522, type: 2}
   TextColor: {r: 0, g: 0.5, b: 1, a: 1}
   TriggerEvent: 0
-  objectsToEffect: []
+  UseSlotID: []
   interactionType: 0

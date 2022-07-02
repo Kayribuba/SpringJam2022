@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0130brahim Kayra Dural  -\nMurat Tun\xE7  -\nEcem Meryumo\u011Flu  -\nFahri
+  m_text: "Murat Tun\xE7  -\n\u0130brahim Kayra Dural  -\nEcem Meryumo\u011Flu  -\nFahri
     Abdiyev  -\nCem Jamal Aksu  -"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Coding\n Level Design\n Art\n Narrative\n Sound Design"
+  m_text: " Level Design\n Coding\n Art\n Narrative\n Sound Design"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

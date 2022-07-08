@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioPlayer : MonoBehaviour
+public class AudioPlayer : MonoBehaviour //Hardcoded :(
 {
     public static AudioPlayer instance;
     public AudioClip[] clips;
@@ -30,6 +30,7 @@ public class AudioPlayer : MonoBehaviour
             case 0:
                 if (oldLevel != level)
                 {
+                    source.Stop();
                     source.clip = clips[0];
                     oldLevel = level;
                     source.Play();
@@ -38,6 +39,7 @@ public class AudioPlayer : MonoBehaviour
             case 1:
                 if (oldLevel != level)
                 {
+                    source.Stop();
                     source.clip = clips[6];
                     oldLevel = level;
                     source.Play();
@@ -46,14 +48,16 @@ public class AudioPlayer : MonoBehaviour
             case 2:
                 if (oldLevel != level)
                 {
+                    source.Stop();
                     source.clip = clips[2];
                     oldLevel = level;
                     source.Play();
                 }
                 break;
-            case 9:
+            case 8:
                 if (oldLevel != level)
                 {
+                    source.Stop();
                     source.clip = clips[6];
                     oldLevel = level;
                     source.PlayOneShot(source.clip);
@@ -62,6 +66,7 @@ public class AudioPlayer : MonoBehaviour
             case 10:
                 if (oldLevel != level)
                 {
+                    source.Stop();
                     source.clip = clips[5];
                     oldLevel = level;
                     source.PlayOneShot(source.clip);

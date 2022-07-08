@@ -24,4 +24,5 @@ MonoBehaviour:
   - SignArrowEnable3
   - SignArrowEnable4
   - GlicthSliderEnable
+  - BossMusicEnable
   interactionType: 1

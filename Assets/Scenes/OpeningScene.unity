@@ -1920,6 +1920,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4604103413695354bb8d2797600c8398, type: 3}
   - {fileID: 8300000, guid: 5c0f30c63bcf3934fa54990693933070, type: 3}
   - {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+  - {fileID: 8300000, guid: 8457781650e004c4ebac62d0f2a487d7, type: 3}
   source: {fileID: 1707496757}
 --- !u!1 &1850084044
 GameObject:

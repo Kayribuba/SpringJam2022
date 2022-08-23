@@ -19,4 +19,5 @@ MonoBehaviour:
   TriggerEvent: 1
   UseSlotID:
   - EnableGlitchMonster
+  - enableLookat
   interactionType: 1

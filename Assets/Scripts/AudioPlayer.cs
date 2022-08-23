@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioPlayer : MonoBehaviour //Hardcoded :(
-{
-    public static AudioPlayer instance;
-    public AudioClip[] clips;
-    public AudioSource source;
+[RequireComponent(typeof(AudioSource))]
 
-    int oldLevel = -1;
+public class AudioPlayer : MonoBehaviour
+{
+    [System.Serializable]
+    struct LevelSong
+    {
+        public int[] levelIndexesToPlay;
+        public AudioClip songToPlay;
+        public bool loopSong;
+    }
+
+    public static AudioPlayer instance;
+    [SerializeField] LevelSong[] levelSongs;
+    AudioSource audioSource;
+
+    int oldIndex = -1;
 
     void Start()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(gameObject);
         }
@@ -20,58 +30,39 @@ public class AudioPlayer : MonoBehaviour //Hardcoded :(
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            audioSource = GetComponent<AudioSource>();
+            CheckSong(0);
         }
 
     }
     void OnLevelWasLoaded(int level)
     {
-        switch(level)
+        CheckSong(level);
+    }
+
+    void CheckSong(int level)
+    {
+        foreach (LevelSong LS in levelSongs)
         {
-            case 0:
-                if (oldLevel != level)
+            foreach (int indx in LS.levelIndexesToPlay)
+            {
+                if (indx == level)
                 {
-                    source.Stop();
-                    source.clip = clips[0];
-                    oldLevel = level;
-                    source.Play();
+                    if (level != oldIndex)
+                    {
+                        if (audioSource.clip != null && LS.songToPlay != audioSource.clip)
+                        {
+                            audioSource.Stop();
+                            audioSource.clip = LS.songToPlay;
+                            audioSource.loop = LS.loopSong;
+                            audioSource.Play();
+                            oldIndex = level;
+                            break;
+                        }
+                    }
                 }
-                break;
-            case 1:
-                if (oldLevel != level)
-                {
-                    source.Stop();
-                    source.clip = clips[6];
-                    oldLevel = level;
-                    source.Play();
-                }
-                break;
-            case 2:
-                if (oldLevel != level)
-                {
-                    source.Stop();
-                    source.clip = clips[2];
-                    oldLevel = level;
-                    source.Play();
-                }
-                break;
-            case 8:
-                if (oldLevel != level)
-                {
-                    source.Stop();
-                    source.clip = clips[6];
-                    oldLevel = level;
-                    source.PlayOneShot(source.clip);
-                }
-                break;
-            case 10:
-                if (oldLevel != level)
-                {
-                    source.Stop();
-                    source.clip = clips[5];
-                    oldLevel = level;
-                    source.PlayOneShot(source.clip);
-                }
-                break;
+            }
+
         }
     }
 }

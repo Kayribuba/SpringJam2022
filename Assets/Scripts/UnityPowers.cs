@@ -159,6 +159,8 @@ public class UnityPowers : MonoBehaviour
             deltaMouseProcessY = 0;
         }
 
+
+        Collider[] collidedObjs;
         switch (tagg)
         {
             case "UnityScaleArrowX":
@@ -166,6 +168,18 @@ public class UnityPowers : MonoBehaviour
                     targetScale.x += deltaMouseX;
                 else
                     targetScale.x -= deltaMouseX;
+
+                collidedObjs = Physics.OverlapBox(ArrowParent.transform.position, new Vector3(50, 50, ArrowParent.transform.localScale.z));
+                foreach (Collider col in collidedObjs)
+                {
+                    if (col.CompareTag(Constants.PlayerTag))
+                    {
+                        if (transform.position.x <= ArrowParent.transform.position.x)
+                            targetScale.x += Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                        else
+                            targetScale.x -= Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                    }
+                }
                 break;
 
             case "UnityScaleArrowY":
@@ -177,6 +191,18 @@ public class UnityPowers : MonoBehaviour
                     targetScale.z -= deltaMouseX;
                 else
                     targetScale.z += deltaMouseX;
+
+                collidedObjs = Physics.OverlapBox(ArrowParent.transform.position, new Vector3(ArrowParent.transform.localScale.x, 50, 50));
+                foreach (Collider col in collidedObjs)
+                {
+                    if (col.CompareTag(Constants.PlayerTag))
+                    {
+                        if (transform.position.z <= ArrowParent.transform.position.z)
+                            targetScale.z += Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                        else
+                            targetScale.z -= Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                    }
+                }
                 break;
 
             case "UnityScaleArrowXMinus":
@@ -184,6 +210,18 @@ public class UnityPowers : MonoBehaviour
                     targetScale.x -= deltaMouseX;
                 else
                     targetScale.x += deltaMouseX;
+
+                collidedObjs = Physics.OverlapBox(ArrowParent.transform.position, new Vector3(50, 50,ArrowParent.transform.localScale.z));
+                foreach (Collider col in collidedObjs)
+                {
+                    if (col.CompareTag(Constants.PlayerTag))
+                    {
+                        if (transform.position.x <= ArrowParent.transform.position.x)
+                            targetScale.x -= Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                        else
+                            targetScale.x += Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                    }
+                }
                 break;
 
             case "UnityScaleArrowYMinus":
@@ -195,6 +233,18 @@ public class UnityPowers : MonoBehaviour
                     targetScale.z += deltaMouseX;
                 else
                     targetScale.z -= deltaMouseX;
+
+                collidedObjs = Physics.OverlapBox(ArrowParent.transform.position, new Vector3(ArrowParent.transform.localScale.x, 50, 50));
+                foreach (Collider col in collidedObjs)
+                {
+                    if (col.CompareTag(Constants.PlayerTag))
+                    {
+                        if (transform.position.z <= ArrowParent.transform.position.z)
+                            targetScale.z -= Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                        else
+                            targetScale.z += Input.GetAxis("Mouse Y") * currentScaleSpeed / 250;
+                    }
+                }
                 break;
         }
 

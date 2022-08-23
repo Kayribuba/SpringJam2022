@@ -1912,16 +1912,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91882d7418d0af642881b0c61bc022f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: e29f809980eecfa4682ba43f17347b2d, type: 3}
-  - {fileID: 8300000, guid: 11159d054dac93f4b9f3fb04b9b42a25, type: 3}
-  - {fileID: 8300000, guid: 197307077f24b6d498f9eca2cf5ba551, type: 3}
-  - {fileID: 8300000, guid: 378f17c49f5c86445b04410cfa33750c, type: 3}
-  - {fileID: 8300000, guid: 4604103413695354bb8d2797600c8398, type: 3}
-  - {fileID: 8300000, guid: 5c0f30c63bcf3934fa54990693933070, type: 3}
-  - {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
-  - {fileID: 8300000, guid: 8457781650e004c4ebac62d0f2a487d7, type: 3}
-  source: {fileID: 1707496757}
+  levelSongs:
+  - levelIndexesToPlay: 00000000
+    songToPlay: {fileID: 8300000, guid: e29f809980eecfa4682ba43f17347b2d, type: 3}
+    loopSong: 1
+  - levelIndexesToPlay: 010000000800000009000000
+    songToPlay: {fileID: 8300000, guid: ebf31a7e234e56947b3e4b57958c0e54, type: 3}
+    loopSong: 1
+  - levelIndexesToPlay: 020000000300000004000000050000000600000007000000
+    songToPlay: {fileID: 8300000, guid: 197307077f24b6d498f9eca2cf5ba551, type: 3}
+    loopSong: 1
+  - levelIndexesToPlay: 0a000000
+    songToPlay: {fileID: 8300000, guid: 5c0f30c63bcf3934fa54990693933070, type: 3}
+    loopSong: 0
 --- !u!1 &1850084044
 GameObject:
   m_ObjectHideFlags: 0

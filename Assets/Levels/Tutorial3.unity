@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 56487472}
   - component: {fileID: 56487471}
   m_Layer: 6
-  m_Name: Platforms (1)
+  m_Name: Platforms (1)1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,11 +464,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56487469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 128.16092, y: -0.31345573, z: 0.725}
-  m_LocalScale: {x: 0.5, y: 0.09138651, z: 0.057154622}
+  m_LocalPosition: {x: -119.839096, y: -8.211749, z: 16.923326}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.50000006}
   m_Children: []
-  m_Father: {fileID: 286487561}
-  m_RootOrder: 0
+  m_Father: {fileID: 981397889}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &56487471
 BoxCollider:
@@ -4055,7 +4055,6 @@ Transform:
   m_LocalPosition: {x: -306.2, y: 3.43, z: -1.13}
   m_LocalScale: {x: 1, y: 10.9425335, z: 8.748199}
   m_Children:
-  - {fileID: 56487470}
   - {fileID: 1612344182}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -5340,7 +5339,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18020
+  m_Name: pb_Mesh19158
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10630,6 +10629,7 @@ Transform:
   - {fileID: 12588650}
   - {fileID: 569986226}
   - {fileID: 1174873833}
+  - {fileID: 56487470}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
